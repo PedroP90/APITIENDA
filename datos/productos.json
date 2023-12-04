@@ -1,5 +1,14 @@
 [
     {
-        
+        "id_producto": 1,
+        "nombre": "",
+        "descripcion": "",
+        "stock":"",
+        "peso":"",
+        "color":"",
+        "marca":"",
+        "precio":"",
+        "categoria":"",
+        "proveedor":""
     }
 ]
