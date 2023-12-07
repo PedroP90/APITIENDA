@@ -22,14 +22,6 @@ import { ProveedorModule } from './modulos/proveedor/proveedor.module';
       password: process.env.DB_PASSWORD,
       autoLoadEntities: true,
       synchronize: true
-      // type: 'postgres',
-      // host: "192.168.1.24",
-      // port: 5432,
-      // database: "postgres",
-      // username: "postgres",
-      // password: "pedro",
-      // autoLoadEntities: true,
-      // synchronize: true
     }),
     ClientesModule,
     UsuariosModule,

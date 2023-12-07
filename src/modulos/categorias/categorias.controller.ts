@@ -9,26 +9,26 @@ export class CategoriasController {
 
   @Post()
   create(@Body() createCategoriaDto: CreateCategoriaDto) {
-    return this.categoriasService.create(createCategoriaDto);
+    return this.categoriasService.newcat(createCategoriaDto);
   }
 
   @Get()
-  findAll() {
-    return this.categoriasService.findAll();
+  showAllCats() {
+    return this.categoriasService.showAllCats();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.categoriasService.findOne(+id);
+  @Get(':id_categoria')
+  detalle1cat(@Param('id_categoria') id_categoria: number) {
+    return this.categoriasService.detalle1cat(id_categoria);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCategoriaDto: UpdateCategoriaDto) {
-    return this.categoriasService.update(+id, updateCategoriaDto);
+  @Patch(':id_categoria')
+  updateCat(@Param('id_categoria') id_categoria: number, @Body() updateCategoriaDto: UpdateCategoriaDto) {
+    return this.categoriasService.updateCat(id_categoria, updateCategoriaDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.categoriasService.remove(+id);
+  @Delete(':id_categoria')
+  delete1Cat(@Param('id_categoria') id_categoria: number) {
+    return this.categoriasService.delete1Cat(id_categoria);
   }
 }

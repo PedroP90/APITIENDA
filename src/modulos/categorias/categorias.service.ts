@@ -1,26 +1,89 @@
-import { Injectable } from '@nestjs/common';
+import { Get, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { CreateCategoriaDto } from './dto/create-categoria.dto';
 import { UpdateCategoriaDto } from './dto/update-categoria.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Categoria } from './entities/categoria.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class CategoriasService {
-  create(createCategoriaDto: CreateCategoriaDto) {
-    return 'This action adds a new categoria';
+  constructor(
+    @InjectRepository(Categoria)
+    private readonly categoriaRepository: Repository<Categoria>
+  ) { }
+
+  // listar todas las categorias
+  async showAllCats() {
+    try {
+      const catData = await this.categoriaRepository.find()
+      return {
+        data: catData,
+        message: 'listado de todas las categorias',
+        status: 200
+      }
+    } catch (error) {
+      throw new InternalServerErrorException("fallo al listar todas las categorias")
+    }
   }
 
-  findAll() {
-    return `This action returns all categorias`;
+  // detalles de una categoria
+  async detalle1cat(id_categoria: number) {
+    try {
+      const categoria = await this.categoriaRepository.findOne({
+        where: { id_categoria }
+      })
+      return {
+        data: categoria,
+        status: 200
+      }
+    } catch (error) {
+      throw new InternalServerErrorException('fallo al listar 1 categoria')
+    }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} categoria`;
+  //crear categorias
+  async newcat(createCategoriaDto: CreateCategoriaDto) {
+    try {
+      const categoria = this.categoriaRepository.create(createCategoriaDto)
+      await this.categoriaRepository.save(categoria)
+      console.log(createCategoriaDto)
+      return {
+        message: "nueva categoria creada",
+        data: categoria,
+        status: 200
+      }
+    } catch (err) {
+      throw new InternalServerErrorException('no se pudo crear la nueva categoria')
+    }
   }
 
-  update(id: number, updateCategoriaDto: UpdateCategoriaDto) {
-    return `This action updates a #${id} categoria`;
+  // eliminar categorias
+  async delete1Cat(id_categoria:number) {
+    const categoria = await this.categoriaRepository.findOne({
+      where: { id_categoria }
+    })
+    await this.categoriaRepository.remove(categoria);
+    return {
+      message: `Categoría con ID ${id_categoria} eliminada correctamente`,
+      status: 200,
+    };
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} categoria`;
+  async updateCat(id_categoria: number, updateCategoriaDto: UpdateCategoriaDto) {
+    try {
+      const categoria = await this.categoriaRepository.findOne({
+        where: { id_categoria }
+      })
+      this.categoriaRepository.merge(categoria, updateCategoriaDto);
+      await this.categoriaRepository.save(categoria);
+      return {
+        message: `Categoría con ID ${id_categoria} actualizada correctamente`,
+        data: categoria,
+        status: 200,
+      };
+    } catch (error) {
+      throw new InternalServerErrorException('Error al actualizar la categoría.');
+    }
   }
+
 }
