@@ -1,0 +1,65 @@
+[
+    {
+        "nif": "12345678A",
+        "nombre": "Juan",
+        "apellidos": "González Pérez",
+        "direccion": "Calle Alegre #123",
+        "provincia": "Madrid",
+        "localidad": "Madrid",
+        "codigo_postal": "28001"
+    },
+    {
+        "nif": "23456789B",
+        "nombre": "Ana",
+        "apellidos": "Martínez López",
+        "direccion": "Avenida Soleada #456",
+        "provincia": "Barcelona",
+        "localidad": "Barcelona",
+        "codigo_postal": "08002"
+    },
+    {
+        "nif": "98765432Z",
+        "nombre": "Luis",
+        "apellidos": "Sánchez García",
+        "direccion": "Plaza Principal #789",
+        "provincia": "Valencia",
+        "localidad": "Valencia",
+        "codigo_postal": "46001"
+    },
+    {
+        "nif": "22345678A",
+        "nombre": "Pepe",
+        "apellidos": "Fernández Pérez",
+        "direccion": "Calle Alegre #223",
+        "provincia": "Madrid",
+        "localidad": "Madrid",
+        "codigo_postal": "28001"
+    },
+    {
+        "nif": "33456789B",
+        "nombre": "Julia",
+        "apellidos": "Martínez Ramírez",
+        "direccion": "Avenida Soleada #436",
+        "provincia": "Barcelona",
+        "localidad": "Barcelona",
+        "codigo_postal": "08002"
+    },
+    {
+        "nif": "18765432Z",
+        "nombre": "Francisco",
+        "apellidos": "Sánchez Hernández",
+        "direccion": "Plaza Principal #289",
+        "provincia": "Valencia",
+        "localidad": "Valencia",
+        "codigo_postal": "46001"
+    },
+    {
+        "nif": "44345678A",
+        "nombre": "María",
+        "apellidos": "Gómez Martínez",
+        "direccion": "Calle Feliz #443",
+        "provincia": "Sevilla",
+        "localidad": "Sevilla",
+        "codigo_postal": "41001"
+    }
+]
