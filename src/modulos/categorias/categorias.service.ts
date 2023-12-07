@@ -34,10 +34,11 @@ export class CategoriasService {
       })
       return {
         data: categoria,
-        status: 200
+        status: 200,
+        message: "detalles de la categoria"
       }
     } catch (error) {
-      throw new InternalServerErrorException('fallo al listar 1 categoria')
+      throw new InternalServerErrorException('fallo al detallar categoria')
     }
   }
 
@@ -48,7 +49,7 @@ export class CategoriasService {
       await this.categoriaRepository.save(categoria)
       console.log(createCategoriaDto)
       return {
-        message: "nueva categoria creada",
+        message: `Categoria ${categoria.nombre}`,
         data: categoria,
         status: 200
       }

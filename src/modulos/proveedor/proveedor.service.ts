@@ -1,26 +1,99 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { CreateProveedorDto } from './dto/create-proveedor.dto';
 import { UpdateProveedorDto } from './dto/update-proveedor.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Proveedor } from './entities/proveedor.entity';
+import { Repository } from 'typeorm';
+import { Categoria } from '../categorias/entities/categoria.entity';
 
 @Injectable()
 export class ProveedorService {
-  create(createProveedorDto: CreateProveedorDto) {
-    return 'This action adds a new proveedor';
+
+  constructor(
+    @InjectRepository(Proveedor)
+    private readonly proveedorRepository: Repository<Proveedor>
+  ) { }
+
+  // listar todos los proveedores
+  async showAllProvs() {
+    try {
+      const provdata = await this.proveedorRepository.find()
+      return {
+        data: provdata,
+        message: 'listado de todos proveedores',
+        status: 200
+      }
+    } catch (error) {
+      throw new InternalServerErrorException('fallo al listar todos los proveedores')
+    }
   }
 
-  findAll() {
-    return `This action returns all proveedor`;
+  // detalle proveedores
+  async detalle1Prov(id_proveedor: number) {
+    try {
+      const proveedor = await this.proveedorRepository.findOne({
+        where: { id_proveedor }
+      })
+      return {
+        data: proveedor,
+        status: 200,
+        message: "detalles del proveedor"
+      }
+    } catch (error) {
+      throw new InternalServerErrorException('fallo al detallar proveedor')
+    }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} proveedor`;
+  // insertar proveedores
+  async newProv(createProveedorDto: CreateProveedorDto) {
+    try {
+      const proveedor = this.proveedorRepository.create(createProveedorDto)
+      await this.proveedorRepository.save(proveedor)
+      console.log(createProveedorDto)
+      return {
+        message: "Proveedor ${proveedor} creado correctamente",
+        data: proveedor,
+        status: 200
+      }
+    } catch (error) {
+      throw new InternalServerErrorException('fallo al crear proveedor')
+    }
   }
 
-  update(id: number, updateProveedorDto: UpdateProveedorDto) {
-    return `This action updates a #${id} proveedor`;
+  // eliminar proveedor
+  async delete1cat(id_proveedor: number) {
+    try {
+      const proveedor = await this.proveedorRepository.findOne({
+        where: {
+          id_proveedor
+        }
+      })
+      await this.proveedorRepository.remove(proveedor)
+      return {
+        message: "proveedor eliminado con exito",
+        status: 200
+      }
+    } catch (error) {
+      throw new InternalServerErrorException('error al eliminar proveedor')
+    }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} proveedor`;
+  // actualizar proveedor
+  async updateProv(id_proveedor: number, updateProveedorDto: UpdateProveedorDto) {
+    try {
+      const proveedor = await this.proveedorRepository.findOne({
+        where: { id_proveedor }
+      })
+      this.proveedorRepository.merge(proveedor, updateProveedorDto)
+      await this.proveedorRepository.save(proveedor)
+      return {
+        message: 'proveedor actualizado',
+        data: proveedor,
+        status: 200
+      }
+    } catch (error) {
+      throw new InternalServerErrorException('fallo al actualizar proveedor')
+    }
   }
+
 }
