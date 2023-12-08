@@ -17,8 +17,8 @@ export class CategoriasService {
     try {
       const catData = await this.categoriaRepository.find()
       return {
-        data: catData,
         message: 'listado de todas las categorias',
+        data: catData,
         status: 200
       }
     } catch (error) {
@@ -33,9 +33,9 @@ export class CategoriasService {
         where: { id_categoria }
       })
       return {
+        message: "detalles de la categoria",
         data: categoria,
-        status: 200,
-        message: "detalles de la categoria"
+        status: 200
       }
     } catch (error) {
       throw new InternalServerErrorException('fallo al detallar categoria')
@@ -49,25 +49,29 @@ export class CategoriasService {
       await this.categoriaRepository.save(categoria)
       console.log(createCategoriaDto)
       return {
-        message: `Categoria ${categoria.nombre}`,
+        message: `Categoria creada`,
         data: categoria,
         status: 200
       }
-    } catch (err) {
+    } catch (error) {
       throw new InternalServerErrorException('no se pudo crear la nueva categoria')
     }
   }
 
   // eliminar categorias
   async delete1Cat(id_categoria:number) {
-    const categoria = await this.categoriaRepository.findOne({
-      where: { id_categoria }
-    })
-    await this.categoriaRepository.remove(categoria);
-    return {
-      message: `Categoría con ID ${id_categoria} eliminada correctamente`,
-      status: 200,
-    };
+    try {
+      const categoria = await this.categoriaRepository.findOne({
+        where: { id_categoria }
+      })
+      await this.categoriaRepository.remove(categoria);
+      return {
+        message: `Categoría con ID ${id_categoria} eliminada correctamente`,
+        status: 200,
+      };
+    } catch (error) {
+      throw new InternalServerErrorException("fallo al eliminar categoria")
+    }
   }
 
   async updateCat(id_categoria: number, updateCategoriaDto: UpdateCategoriaDto) {

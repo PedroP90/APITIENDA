@@ -1,5 +1,6 @@
 [
     {
+      "id_proveedor":1,
       "nombre": "MegaSur",
       "cif": "B76365789",
       "telefono": "123-456-789",
@@ -9,6 +10,7 @@
       "direccion": "Calle MegaSur #123"
     },
     {
+      "id_proveedor":2,
       "nombre": "DMI Computer",
       "cif": "B16365789",
       "telefono": "987-654-321",
@@ -18,6 +20,7 @@
       "direccion": "Avenida DMI Computer #456"
     },
     {
+      "id_proveedor":3,
       "nombre": "Depau",
       "cif": "B72365789",
       "telefono": "111-222-333",
@@ -27,6 +30,7 @@
       "direccion": "Plaza Depau #789"
     },
     {
+      "id_proveedor":4,
       "nombre": "REC LINE",
       "cif": "B76365789",
       "telefono": "555-555-555",
@@ -36,6 +40,7 @@
       "direccion": "Calle REC LINE #555"
     },
     {
+      "id_proveedor":5,
       "nombre": "OPEX",
       "cif": "B76345789",
       "telefono": "999-999-999",

@@ -4,7 +4,6 @@ import { UpdateProveedorDto } from './dto/update-proveedor.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Proveedor } from './entities/proveedor.entity';
 import { Repository } from 'typeorm';
-import { Categoria } from '../categorias/entities/categoria.entity';
 
 @Injectable()
 export class ProveedorService {
@@ -19,8 +18,8 @@ export class ProveedorService {
     try {
       const provdata = await this.proveedorRepository.find()
       return {
-        data: provdata,
         message: 'listado de todos proveedores',
+        data: provdata,
         status: 200
       }
     } catch (error) {
@@ -35,9 +34,9 @@ export class ProveedorService {
         where: { id_proveedor }
       })
       return {
+        message: "detalles del proveedor",
         data: proveedor,
-        status: 200,
-        message: "detalles del proveedor"
+        status: 200
       }
     } catch (error) {
       throw new InternalServerErrorException('fallo al detallar proveedor')
@@ -51,7 +50,7 @@ export class ProveedorService {
       await this.proveedorRepository.save(proveedor)
       console.log(createProveedorDto)
       return {
-        message: "Proveedor ${proveedor} creado correctamente",
+        message: "Proveedor creado correctamente",
         data: proveedor,
         status: 200
       }
@@ -95,5 +94,4 @@ export class ProveedorService {
       throw new InternalServerErrorException('fallo al actualizar proveedor')
     }
   }
-
 }

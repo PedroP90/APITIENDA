@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe } from '@nestjs/common';
 import { ProveedorService } from './proveedor.service';
 import { CreateProveedorDto } from './dto/create-proveedor.dto';
 import { UpdateProveedorDto } from './dto/update-proveedor.dto';
@@ -9,26 +9,26 @@ export class ProveedorController {
 
   @Post()
   create(@Body() createProveedorDto: CreateProveedorDto) {
-    return this.proveedorService.create(createProveedorDto);
+    return this.proveedorService.newProv(createProveedorDto);
   }
 
   @Get()
-  findAll() {
-    return this.proveedorService.findAll();
+  showAllProvs() {
+    return this.proveedorService.showAllProvs();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.proveedorService.findOne(+id);
+  @Get(':id_proveedor')
+  detalle1Prov(@Param('id_proveedor') id_proveedor: number) {
+    return this.proveedorService.detalle1Prov(id_proveedor);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateProveedorDto: UpdateProveedorDto) {
-    return this.proveedorService.update(+id, updateProveedorDto);
+  @Patch(':id_proveedor')
+  update(@Param('id_proveedor',ParseIntPipe) id_proveedor: number, @Body() updateProveedorDto: UpdateProveedorDto) {
+    return this.proveedorService.updateProv(id_proveedor, updateProveedorDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.proveedorService.remove(+id);
+  @Delete(':id_proveedor')
+  remove(@Param('id_proveedor') id_proveedor: number) {
+    return this.proveedorService.delete1cat(id_proveedor);
   }
 }

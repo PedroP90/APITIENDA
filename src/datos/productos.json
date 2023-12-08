@@ -7,7 +7,7 @@
         "modelo":"Slim Desktop S01-pF2027ns",
         "precio":510,
         "stock":100,
-        "peso (kg)":3,
+        "peso_kg":3,
         "color":"negro",
         "categoria":"Ordenadores de Sobremesa",
         "proveedor":"MegaSur"
@@ -20,7 +20,7 @@
         "modelo":"MAG Infinite S3",
         "precio":2190,
         "stock":50,
-        "peso (kg)":10,
+        "peso_kg":10,
         "color":"negro",
         "categoria":"Ordenadores de Sobremesa",
         "proveedor":"MegaSur"
@@ -33,7 +33,7 @@
         "modelo":"Oak9a",
         "precio":1350,
         "stock":25,
-        "peso (kg)":10,
+        "peso_kg":10,
         "color":"negro",
         "categoria":"Ordenadores de Sobremesa",
         "proveedor":"MegaSur"
@@ -46,7 +46,7 @@
         "modelo":"VivoBook 15 F1502ZA-EJ733",
         "precio":500,
         "stock":100,
-        "peso (kg)":3,
+        "peso_kg":3,
         "color":"azul",
         "categoria":"Portátiles",
         "proveedor":"DMI Computer"
@@ -59,7 +59,7 @@
         "modelo":"Victus 15-fa0053ns",
         "precio":750,
         "stock":70,
-        "peso (kg)":3,
+        "peso_kg":3,
         "color":"gris",
         "categoria":"Portátiles",
         "proveedor":"DMI Computer"
@@ -72,7 +72,7 @@
         "modelo":"Flex Advance",
         "precio":870,
         "stock":50,
-        "peso (kg)":3,
+        "peso_kg":3,
         "color":"blanco",
         "categoria":"Portátiles",
         "proveedor":"DMI Computer"
@@ -85,7 +85,7 @@
         "modelo":"MPG B550 GAMING PLUS",
         "precio":145,
         "stock":90,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Placas Base",
         "proveedor":"Depau"
@@ -98,7 +98,7 @@
         "modelo":"PRO Z790-P WIFI",
         "precio":251,
         "stock":100,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Placas Base",
         "proveedor":"Depau"
@@ -111,7 +111,7 @@
         "modelo":"MPG X670E CARBON WIFI",
         "precio":500,
         "stock":100,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Placas Base",
         "proveedor":"Depau"
@@ -124,7 +124,7 @@
         "modelo":"Ryzen 5 5600X",
         "precio":150,
         "stock":30,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"",
         "categoria":"Procesadores",
         "proveedor":"REC LINE"
@@ -137,7 +137,7 @@
         "modelo":"Ryzen 5 5500",
         "precio":100,
         "stock":40,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"",
         "categoria":"Procesadores",
         "proveedor":"REC LINE"
@@ -150,7 +150,7 @@
         "modelo":"Ryzen 5 7600X",
         "precio":229,
         "stock":20,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"",
         "categoria":"Procesadores",
         "proveedor":"REC LINE"
@@ -163,7 +163,7 @@
         "modelo":"SCULPTOR X VENTILADOR DOBLE 6 PIPES 2X120MM A-RGB PWM BLANCO",
         "precio":54,
         "stock":20,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"blanco",
         "categoria":"Disipadores",
         "proveedor":"OPEX"
@@ -176,7 +176,7 @@
         "modelo":"HYPER 212 HALO BLACK VENTILADOR CPU 120MM NEGRO",
         "precio":40,
         "stock":34,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Disipadores",
         "proveedor":"OPEX"
@@ -189,7 +189,7 @@
         "modelo":"MCPU220 VENTILADOR CPU ARGB 120MM BLANCO",
         "precio":20,
         "stock":17,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"blanco",
         "categoria":"Disipadores",
         "proveedor":"OPEX"
@@ -202,7 +202,7 @@
         "modelo":"VENGEANCE RGB PRO DDR4 3200 PC4-25600 32 GB 2X16GB CL16",
         "precio":44,
         "stock":13,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Memorias RAM",
         "proveedor":"OPEX"
@@ -215,7 +215,7 @@
         "modelo":"VENGEANCE RGB DDR5 6000MHz PC5-48000 32GB 2X16GB CL36 NEGRA",
         "precio":82,
         "stock":33,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Memorias RAM",
         "proveedor":"OPEX"
@@ -228,7 +228,7 @@
         "modelo":"VENGEANCE LPX DDR4 3200MHZ PC4-25600 32GB 2X16GB CL16",
         "precio":99,
         "stock":11,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Memorias RAM",
         "proveedor":"OPEX"
@@ -241,7 +241,7 @@
         "modelo":"BLACK SN770 2TB NVMe SSD",
         "precio":120,
         "stock":15,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Almacenamiento",
         "proveedor":"MegaSur"
@@ -254,7 +254,7 @@
         "modelo":"BLACK SN770 1TB SSD PCIE GEN4 NVME",
         "precio":68,
         "stock":22,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Almacenamiento",
         "proveedor":"MegaSur"
@@ -267,7 +267,7 @@
         "modelo":"970 EVO PLUS M.2 PCIE NVME SSD",
         "precio":90,
         "stock":13,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Almacenamiento",
         "proveedor":"MegaSur"
@@ -280,7 +280,7 @@
         "modelo":"PSU PRO 650W 80+ BRONZE FUENTE DE ALIMENTACION",
         "precio":39,
         "stock":11,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Fuentes de Alimentacion",
         "proveedor":"DMI Computer"
@@ -293,7 +293,7 @@
         "modelo":"BOLT PSU 850W 80+ GOLD FULL MODELAR FUENTA DE ALIMENTACION",
         "precio":160,
         "stock":32,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Fuentes de Alimentacion",
         "proveedor":"DMI Computer"
@@ -306,7 +306,7 @@
         "modelo":"SIGITTA X 750W PCIE 5.0 80 PLUS GOLD FULL MODELAR A RGB",
         "precio":150,
         "stock":10,
-        "peso (kg)":1,
+        "peso_kg":1,
         "color":"negro",
         "categoria":"Fuentes de Alimentacion",
         "proveedor":"DMI Computer"

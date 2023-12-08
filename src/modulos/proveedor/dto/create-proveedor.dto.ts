@@ -1,10 +1,8 @@
-import { Optional } from "@nestjs/common";
 import { IsNumber, IsOptional, IsString, MinLength } from "class-validator";
 
 export class CreateProveedorDto {
 
     @IsNumber()
-    @MinLength(1)
     id_proveedor:number
 
     @IsString()

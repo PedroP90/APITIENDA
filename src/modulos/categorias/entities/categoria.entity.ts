@@ -7,8 +7,8 @@ export class Categoria {
     id_categoria:number
 
     @Column('text',{
-        nullable:true,
-        unique:false
+        nullable:false,
+        unique:true
     })
     nombre:string
 
@@ -16,5 +16,5 @@ export class Categoria {
         nullable:true,
         unique:false
     })
-    descripcion:string
+    descripcion: string
 }

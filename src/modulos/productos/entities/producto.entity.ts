@@ -8,9 +8,21 @@ export class Producto {
 
     @Column('text', {
         nullable: false,
-        unique: false
+        unique: true
     })
     nombre: string;
+
+    @Column('text',{
+        unique:false,
+        nullable:false
+    })
+    marca:string
+    
+    @Column('text',{
+        unique:false,
+        nullable:false
+    })
+    modelo:string
 
     @Column('text',{
         unique:false,
@@ -26,9 +38,15 @@ export class Producto {
 
     @Column('numeric',{
         unique:false,
+        nullable:false
+    })
+    precio:number
+
+    @Column('numeric',{
+        unique:false,
         nullable:true
     })
-    peso:number
+    peso_kg:number
 
     @Column('text',{
         unique:false,
@@ -40,11 +58,12 @@ export class Producto {
         unique:false,
         nullable:false
     })
-    marca:string
-    
+    categoria:string
+
     @Column('text',{
         unique:false,
         nullable:false
     })
-    modelo:string
+    proveedor:string
+
 }
