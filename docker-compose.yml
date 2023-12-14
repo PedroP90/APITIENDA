@@ -3,10 +3,10 @@ services:
   db:
     image: postgres:14.3
     restart: always
-    # environment:
-    #   - "POSTGRES_DB=${DB_NAME}"
-    #   - "POSTGRES_USER=${DB_USERNAME}"
-    #   - "POSTGRES_PASSWORD=${DB_PASSWORD}"
+    environment:
+      - "POSTGRES_DB=${DB_NAME}"
+      - "POSTGRES_USER=${DB_USERNAME}"
+      - "POSTGRES_PASSWORD=${DB_PASSWORD}"
     env_file:
       - .env
     ports:

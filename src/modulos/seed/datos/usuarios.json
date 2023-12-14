@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "nombreUsuario": "juanito92",
+        "mail": "juanito92@gmail.com",
+        "password": "usuario1",
+        "nif": "23456789B"
+    },
+    {
+        "id": 2,
+        "nombreUsuario": "ana98",
+        "mail": "ana98@hotmail.es",
+        "password": "usuario1",
+        "nif": "23456789B"
+    },
+    {
+        "id": 3,
+        "nombreUsuario": "luis01",
+        "mail": "luis01@yahoo.es",
+        "password": "usuario1",
+        "nif": "23456789B"
+    },
+    {
+        "id": 4,
+        "nombreUsuario": "pepe02",
+        "mail": "pepe02@outlook.es",
+        "password": "usuario1",
+        "nif": "23456789B"
+    },
+    {
+        "id": 5,
+        "nombreUsuario": "julia02",
+        "mail": "julia02@gmail.com",
+        "password": "usuario1",
+        "nif":"23456789B"
+    },
+    {
+        "id": 6,
+        "nombreUsuario": "francisco13",
+        "mail": "francisco13@hotmail.es",
+        "password": "usuario1",
+        "nif": "23456789B"
+    },
+    {
+        "id": 7,
+        "nombreUsuario": "maria01",
+        "mail": "maria01@yahoo.es",
+        "password": "usuario1",
+        "nif": "44345678A"
+    },
+    {
+        "id": 8,
+        "nombreUsuario": "carlitos05",
+        "mail": "carlitos05@gmail.com",
+        "password": "usuario1",
+        "nif": "23456789B"
+    },
+    {
+        "id": 9,
+        "nombreUsuario": "elena50",
+        "mail": "elena50@hotmail.es",
+        "password": "usuario1",
+        "nif": "23456789B"
+    },
+    {
+        "id": 10,
+        "nombreUsuario": "antonio08",
+        "mail": "antonio08@gmail.com",
+        "password": "usuario1",
+        "nif": "23456789B"
+    }
+]

@@ -1,3 +1,4 @@
+import { Usuario } from 'src/modulos/usuarios/entities/usuario.entity';
 import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
 
 
@@ -38,4 +39,10 @@ export class Cliente {
         nullable: true
     })
     codigo_postal: string;
+
+    @OneToMany(
+        () => Usuario,
+        (usuario) => usuario.nif
+    )
+    usuarios?: Usuario[]
 }

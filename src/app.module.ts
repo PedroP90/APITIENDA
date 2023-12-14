@@ -4,6 +4,9 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ClientesModule } from './modulos/clientes/clientes.module';
+import { UsuariosModule } from './modulos/usuarios/usuarios.module';
+import { SeedModule } from './modulos/seed/seed.module';
+
 
 
 @Module({
@@ -18,16 +21,10 @@ import { ClientesModule } from './modulos/clientes/clientes.module';
       password: process.env.DB_PASSWORD,
       autoLoadEntities: true,
       synchronize: true
-      // type: 'postgres',
-      // host: "192.168.1.24",
-      // port: 5432,
-      // database: "postgres",
-      // username: "postgres",
-      // password: "pedro",
-      // autoLoadEntities: true,
-      // synchronize: true
     }),
-    ClientesModule
+    SeedModule,
+    ClientesModule,
+    UsuariosModule
   ],
   controllers: [AppController],
   providers: [AppService],

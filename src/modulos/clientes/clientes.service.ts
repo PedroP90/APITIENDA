@@ -19,18 +19,8 @@ export class ClientesService {
   @Post()
   async create(createClienteDto: CreateClienteDto) {
     try{
-      // el objeto (CreateClienteDto) del controlador
-      // lo prepara en el objeto (autor) para ser INSERTADO en el SGBD
       const cliente = this.clienteRepository.create(createClienteDto);
-      
-
-      // lanza la petición de inserción a la BD
-      // Mapea Objeto autor <--> registro autor
-      // insert into Autor(isbb, nombre) values ("1", "Glenn Smith")
-      // aplica la librería de bd instalada en el proyecto --> librería de postgres pg
       await this.clienteRepository.save(cliente);
-      
-
       return {
         msg: 'Registro Insertado',
         data: cliente,
@@ -71,11 +61,37 @@ export class ClientesService {
     return cliente;
   }
 
-  update(id: number, updateClienteDto: UpdateClienteDto) {
-    return `This action updates a #${id} cliente`;
+  async update(nif: string, updateClienteDto: UpdateClienteDto) {
+    try {
+      const cliente = await this.clienteRepository.findOne({
+        where: { nif }
+      })
+      this.clienteRepository.merge(cliente, updateClienteDto);
+      await this.clienteRepository.save(cliente);
+      return {
+        message: `Categoría con ID ${nif} actualizada correctamente`,
+        data: cliente,
+        status: 200,
+      };
+    } catch (error) {
+      throw new InternalServerErrorException('Error al actualizar la categoría.');
+    }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} cliente`;
+  async remove(nif: string) {
+    const cliente = await this.clienteRepository.findOneBy({ nif });
+    await this.clienteRepository.remove(cliente);
+  }
+
+  async deleteAllClientes(){
+    const query = this.clienteRepository.createQueryBuilder('cliente');
+    try{
+      return await query
+        .delete()
+        .where({})
+        .execute()
+    }catch(error){
+      throw new InternalServerErrorException('sysadmin...')
+    }
   }
 }

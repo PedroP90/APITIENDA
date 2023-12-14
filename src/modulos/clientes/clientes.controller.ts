@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query, ParseIntPipe } from '@nestjs/common';
 import { ClientesService } from './clientes.service';
 import { CreateClienteDto } from './dto/create-cliente.dto';
 import { UpdateClienteDto } from './dto/update-cliente.dto';
@@ -10,7 +10,7 @@ export class ClientesController {
 
   @Post('/')
   create(@Body() createClienteDto: CreateClienteDto) {
-    console.log('usuario creado')
+    // console.log('usuario creado')
     return this.clientesService.create(createClienteDto);
   }
 
@@ -25,13 +25,13 @@ export class ClientesController {
     return this.clientesService.findOne(nif);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateClienteDto: UpdateClienteDto) {
-    return this.clientesService.update(+id, updateClienteDto);
+  @Patch(':nif')
+  update(@Param('nif') nif: string, @Body() updateClienteDto: UpdateClienteDto) {
+    return this.clientesService.update(nif, updateClienteDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.clientesService.remove(+id);
-  }
+  @Delete(':nif')
+    remove(@Param('nif') nif: string) {
+        return this.clientesService.remove(nif);
+    }
 }
