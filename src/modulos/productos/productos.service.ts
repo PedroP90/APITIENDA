@@ -4,13 +4,15 @@ import { UpdateProductoDto } from './dto/update-producto.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Producto } from './entities/producto.entity';
 import { Repository } from 'typeorm';
+import { CategoriasService } from '../categorias/categorias.service';
 
 @Injectable()
 export class ProductosService {
 
   constructor(
     @InjectRepository(Producto)
-    private readonly productoRepository: Repository<Producto>
+    private readonly productoRepository: Repository<Producto>,
+    private readonly categoriaService: CategoriasService
   ) { }
 
   // listar todos los productos
@@ -40,14 +42,34 @@ export class ProductosService {
   }
 
   // insertar producto
-  async newProv(createProductoDto:CreateProductoDto){
-    const producto = this.productoRepository.create(createProductoDto)
-    await this.productoRepository.save(producto)
-    console.log(createProductoDto)
-    return{
-      message: 'producto creado',
-      data: producto,
-      status: 200
+  // async newProv(createProductoDto:CreateProductoDto){
+  //   const producto = this.productoRepository.create(createProductoDto)
+  //   await this.productoRepository.save(producto)
+  //   console.log(createProductoDto)
+  //   return{
+  //     message: 'producto creado',
+  //     data: producto, 
+  //     status: 200
+  //   }
+  // }
+
+  async newProd(createProductoDto: CreateProductoDto) {
+    try{
+        const {categoria, ...campos } = createProductoDto;
+        const producto = this.productoRepository.create({...campos});;
+        const categoriaobj = await this.categoriaService.detalle1cat(+categoria);      
+        console.log(categoriaobj);
+        producto.categoria = categoriaobj; // direcciÃ³n del objeto autor relacionado con libros
+      await this.productoRepository.save(producto);
+        
+        return {
+        msg: 'Producto correctamente insertado',
+        data: producto,
+        status:200
+      }
+    }catch(error){
+      console.log(error)
+      throw new InternalServerErrorException('sysadmin...');
     }
   }
 

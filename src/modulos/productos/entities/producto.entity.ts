@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Categoria } from "src/modulos/categorias/entities/categoria.entity";
+import { Column, Entity, ManyToMany, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class Producto {
@@ -58,12 +59,12 @@ export class Producto {
         unique:false,
         nullable:false
     })
-    categoria:string
-
-    @Column('text',{
-        unique:false,
-        nullable:false
-    })
     proveedor:string
 
+    @ManyToOne(
+        () => Categoria,
+        (categoria) => categoria.productos,
+        {cascade:true}
+    )
+    categoria?:Categoria
 }

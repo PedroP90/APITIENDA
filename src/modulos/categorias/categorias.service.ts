@@ -32,11 +32,7 @@ export class CategoriasService {
       const categoria = await this.categoriaRepository.findOne({
         where: { id_categoria }
       })
-      return {
-        message: "detalles de la categoria",
-        data: categoria,
-        status: 200
-      }
+      return categoria
     } catch (error) {
       throw new InternalServerErrorException('fallo al detallar categoria')
     }
@@ -57,6 +53,8 @@ export class CategoriasService {
       throw new InternalServerErrorException('no se pudo crear la nueva categoria')
     }
   }
+
+  
 
   // eliminar categorias
   async delete1Cat(id_categoria:number) {
@@ -90,5 +88,16 @@ export class CategoriasService {
       throw new InternalServerErrorException('Error al actualizar la categoría.');
     }
   }
+
+  async deleteAllCat(){
+    const consulta=this.categoriaRepository.createQueryBuilder('categoria');
+    try {
+      return await consulta.delete().where({}).execute()
+    } catch (error) {
+      throw new InternalServerErrorException('fallo al hacer al eliminar cats para carga masiva')
+    }
+  }
+
+
 
 }
