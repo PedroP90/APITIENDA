@@ -21,20 +21,20 @@ export class UsuariosService {
 
   async create(createUsuarioDto: CreateUsuarioDto) {
     try{
-        const {nif, ...campos } = createUsuarioDto;
+        const {cliente, ...campos } = createUsuarioDto;
         const usuario = this.usuarioRepository.create({...campos});
-        const clienteobj = await this.clienteRepository.findOne(nif);      
-        console.log(clienteobj);
-        usuario.nif = clienteobj; // dirección del objeto autor relacionado con libros
+        const clienteobj = await this.clienteRepository.findOne(cliente);      
+        //console.log(clienteobj);
+        usuario.cliente = clienteobj; // dirección del objeto autor relacionado con libros
       await this.usuarioRepository.save(usuario);
         
         return {
-        msg: 'Libro correctamente insertado',
+        msg: 'Usuario correctamente insertado',
         data: usuario,
         status:200
       }
     }catch(error){
-      console.log(error)
+      //console.log(error)
       throw new InternalServerErrorException('sysadmin...');
     }
   }
@@ -71,6 +71,9 @@ export class UsuariosService {
     const cliente = this.usuarioRepository.findOne({
       where:{
         id
+      },
+      relations: {
+        cliente: true
       }
     });
     return cliente;

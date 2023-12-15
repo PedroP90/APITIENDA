@@ -42,7 +42,8 @@ export class Cliente {
 
     @OneToMany(
         () => Usuario,
-        (usuario) => usuario.nif
+        (usuario) => usuario.cliente,
+        { eager: true }
     )
     usuarios?: Usuario[]
 }

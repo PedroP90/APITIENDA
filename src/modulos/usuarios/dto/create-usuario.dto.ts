@@ -20,5 +20,5 @@ export class CreateUsuarioDto {
 
     @IsString()
     @MinLength(9)
-    nif?: string;
+    cliente?: string;
 }

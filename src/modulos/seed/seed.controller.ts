@@ -10,7 +10,6 @@ export class SeedController {
   }  
   @Get()
   loadData(){
-    console.log(this.seedService.loadData);
     return this.seedService.loadData();
   }
 }

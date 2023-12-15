@@ -33,8 +33,8 @@ export class Usuario {
 
     @ManyToOne(
         () => Cliente,
-        (nif) => nif.usuarios,
+        (cliente) => cliente.usuarios,
         {cascade: true}
     )
-    nif?: Cliente
+    cliente?: Cliente
 }
