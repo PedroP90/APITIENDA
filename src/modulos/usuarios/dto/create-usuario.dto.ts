@@ -1,4 +1,4 @@
-import { IsNumber, IsString, MinLength } from "class-validator";
+import { IsNumber, IsString, Matches, MinLength } from "class-validator";
 
 
 export class CreateUsuarioDto {
@@ -16,6 +16,10 @@ export class CreateUsuarioDto {
 
     @IsString()
     @MinLength(5)
+    @Matches(
+        /(?:(?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, {
+        message: 'La contraseña debe tener mayúsculas, minúsculas y números'
+        })
     password: string;
 
     @IsString()
