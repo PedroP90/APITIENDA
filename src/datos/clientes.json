@@ -1,0 +1,182 @@
+[
+    {
+        "nif": "12345678A",
+        "nombre": "Juan",
+        "apellidos": "González Pérez",
+        "direccion": "Calle Alegre #123",
+        "provincia": "Madrid",
+        "localidad": "Madrid",
+        "codigo_postal": "28001"
+    },
+    {
+        "nif": "23456789B",
+        "nombre": "Ana",
+        "apellidos": "Martínez López",
+        "direccion": "Avenida Soleada #456",
+        "provincia": "Barcelona",
+        "localidad": "Barcelona",
+        "codigo_postal": "08002"
+    },
+    {
+        "nif": "98765432Z",
+        "nombre": "Luis",
+        "apellidos": "Sánchez García",
+        "direccion": "Plaza Principal #789",
+        "provincia": "Valencia",
+        "localidad": "Valencia",
+        "codigo_postal": "46001"
+    },
+    {
+        "nif": "22345678A",
+        "nombre": "Pepe",
+        "apellidos": "Fernández Pérez",
+        "direccion": "Calle Alegre #223",
+        "provincia": "Madrid",
+        "localidad": "Madrid",
+        "codigo_postal": "28001"
+    },
+    {
+        "nif": "33456789B",
+        "nombre": "Julia",
+        "apellidos": "Martínez Ramírez",
+        "direccion": "Avenida Soleada #436",
+        "provincia": "Barcelona",
+        "localidad": "Barcelona",
+        "codigo_postal": "08002"
+    },
+    {
+        "nif": "18765432Z",
+        "nombre": "Francisco",
+        "apellidos": "Sánchez Hernández",
+        "direccion": "Plaza Principal #289",
+        "provincia": "Valencia",
+        "localidad": "Valencia",
+        "codigo_postal": "46001"
+    },
+    {
+        "nif": "44345678A",
+        "nombre": "María",
+        "apellidos": "Gómez Martínez",
+        "direccion": "Calle Feliz #443",
+        "provincia": "Sevilla",
+        "localidad": "Sevilla",
+        "codigo_postal": "41001"
+    },
+    {
+        "nif": "55456789B",
+        "nombre": "Carlos",
+        "apellidos": "Rodríguez Ruiz",
+        "direccion": "Avenida Brillante #554",
+        "provincia": "Málaga",
+        "localidad": "Málaga",
+        "codigo_postal": "29002"
+    },
+    {
+        "nif": "26765432Z",
+        "nombre": "Elena",
+        "apellidos": "Díaz Sánchez",
+        "direccion": "Plaza Hermosa #267",
+        "provincia": "Zaragoza",
+        "localidad": "Zaragoza",
+        "codigo_postal": "50001"
+    },
+    {
+        "nif": "77876543X",
+        "nombre": "Antonio",
+        "apellidos": "Pérez García",
+        "direccion": "Calle Nueva #778",
+        "provincia": "Granada",
+        "localidad": "Granada",
+        "codigo_postal": "18001"
+    },
+    {
+        "nif": "88987654Y",
+        "nombre": "Laura",
+        "apellidos": "Hernández Díaz",
+        "direccion": "Avenida Moderna #889",
+        "provincia": "Bilbao",
+        "localidad": "Bilbao",
+        "codigo_postal": "48002"
+    },
+    {
+        "nif": "12344321A",
+        "nombre": "Laura",
+        "apellidos": "García Rodríguez",
+        "direccion": "Calle Primavera #543",
+        "provincia": "Sevilla",
+        "localidad": "Dos Hermanas",
+        "codigo_postal": "41700"
+    },
+    {
+        "nif": "98761234B",
+        "nombre": "Pedro",
+        "apellidos": "Fernández Gómez",
+        "direccion": "Avenida del Sol #76",
+        "provincia": "Barcelona",
+        "localidad": "Sabadell",
+        "codigo_postal": "08201"
+    },
+    {
+        "nif": "56789012Z",
+        "nombre": "Sandra",
+        "apellidos": "López Martín",
+        "direccion": "Plaza Libertad #234",
+        "provincia": "Valencia",
+        "localidad": "Torrent",
+        "codigo_postal": "46900"
+    },
+    {
+        "nif": "34567890A",
+        "nombre": "Miguel",
+        "apellidos": "Gómez Fernández",
+        "direccion": "Calle Río #876",
+        "provincia": "Madrid",
+        "localidad": "Alcorcón",
+        "codigo_postal": "28922"
+    },
+    {
+        "nif": "21098765B",
+        "nombre": "Isabel",
+        "apellidos": "Martínez Ruiz",
+        "direccion": "Avenida Central #109",
+        "provincia": "Málaga",
+        "localidad": "Fuengirola",
+        "codigo_postal": "29640"
+    },
+    {
+        "nif": "87654321Z",
+        "nombre": "Javier",
+        "apellidos": "García Sánchez",
+        "direccion": "Plaza España #321",
+        "provincia": "Zaragoza",
+        "localidad": "Utebo",
+        "codigo_postal": "50180"
+    },
+    {
+        "nif": "54321098A",
+        "nombre": "Carmen",
+        "apellidos": "Díaz Jiménez",
+        "direccion": "Calle Luna #210",
+        "provincia": "Bilbao",
+        "localidad": "Barakaldo",
+        "codigo_postal": "48901"
+    },
+    {
+        "nif": "87654321B",
+        "nombre": "Daniel",
+        "apellidos": "Hernández Serrano",
+        "direccion": "Avenida del Mar #765",
+        "provincia": "Granada",
+        "localidad": "Almuñécar",
+        "codigo_postal": "18690"
+    },
+    {
+        "nif": "12345098Z",
+        "nombre": "Silvia",
+        "apellidos": "Rodríguez García",
+        "direccion": "Plaza Mayor #543",
+        "provincia": "Valencia",
+        "localidad": "Xirivella",
+        "codigo_postal": "46950"
+    }
+]
