@@ -1,5 +1,5 @@
 import { IsNumber, IsOptional, IsString, MinLength } from "class-validator";
-import { Categoria } from "src/modulos/categorias/entities/categoria.entity";
+
 
 export class CreateProductoDto {
     
@@ -36,10 +36,9 @@ export class CreateProductoDto {
     @MinLength(3)
     color:string
 
-    @IsOptional()
-    categoria?:Categoria
+    @IsString()
+    categoria?:string
 
     @IsString()
-    @MinLength(3)
     proveedor:string
 }

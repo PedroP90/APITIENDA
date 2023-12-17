@@ -1,19 +1,18 @@
 import { Cliente } from "src/modulos/clientes/entities/cliente.entity";
-import { Entity, PrimaryColumn, Column, ManyToOne } from "typeorm";
+import { Entity, PrimaryColumn, Column, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
 export class Usuario {
 
-    @PrimaryColumn('int',{
-        nullable: false,
-    }) 
+    @PrimaryGeneratedColumn('increment')
     id: number;
 
-    @Column('text',{
-        nullable: true
+    @PrimaryColumn('text',{
+        nullable: false,
+        unique:true
     })
-    nombreUsuario?: string;
+    nombreUsuario: string;
 
     @Column('text',{
         nullable: true

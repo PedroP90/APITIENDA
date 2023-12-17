@@ -9,8 +9,8 @@
         "stock":100,
         "peso_kg":3,
         "color":"negro",
-        "categoria":"Ordenadores de Sobremesa",
-        "proveedor":"MegaSur"
+        "categoria":"1",
+        "proveedor":"1"
     },
     {
         "id_producto": 2,
@@ -22,8 +22,8 @@
         "stock":50,
         "peso_kg":10,
         "color":"negro",
-        "categoria":"Ordenadores de Sobremesa",
-        "proveedor":"MegaSur"
+        "categoria":"1",
+        "proveedor":"1"
     },
     {
         "id_producto": 3,
@@ -35,8 +35,8 @@
         "stock":25,
         "peso_kg":10,
         "color":"negro",
-        "categoria":"Ordenadores de Sobremesa",
-        "proveedor":"MegaSur"
+        "categoria":"1",
+        "proveedor":"1"
     },
     {
         "id_producto":4,
@@ -48,8 +48,8 @@
         "stock":100,
         "peso_kg":3,
         "color":"azul",
-        "categoria":"Portátiles",
-        "proveedor":"DMI Computer"
+        "categoria":"2",
+        "proveedor":"2"
     },
     {
         "id_producto": 5,
@@ -61,8 +61,8 @@
         "stock":70,
         "peso_kg":3,
         "color":"gris",
-        "categoria":"Portátiles",
-        "proveedor":"DMI Computer"
+        "categoria":"2",
+        "proveedor":"2"
     },
     {
         "id_producto": 6,
@@ -74,8 +74,8 @@
         "stock":50,
         "peso_kg":3,
         "color":"blanco",
-        "categoria":"Portátiles",
-        "proveedor":"DMI Computer"
+        "categoria":"2",
+        "proveedor":"2"
     },
     {
         "id_producto": 7,
@@ -87,8 +87,8 @@
         "stock":90,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Placas Base",
-        "proveedor":"Depau"
+        "categoria":"3",
+        "proveedor":"3"
     },
     {
         "id_producto": 8,
@@ -100,8 +100,8 @@
         "stock":100,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Placas Base",
-        "proveedor":"Depau"
+        "categoria":"3",
+        "proveedor":"3"
     },
     {
         "id_producto": 9,
@@ -113,8 +113,8 @@
         "stock":100,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Placas Base",
-        "proveedor":"Depau"
+        "categoria":"3",
+        "proveedor":"3"
     },
     {
         "id_producto": 10,
@@ -126,34 +126,34 @@
         "stock":30,
         "peso_kg":1,
         "color":"",
-        "categoria":"Procesadores",
-        "proveedor":"REC LINE"
+        "categoria":"4",
+        "proveedor":"4"
     },
     {
         "id_producto": 11,
         "nombre": "AMD Ryzen 5 5500",
-        "descripcion":"Los procesadores para juegos mejor valorados del mundo se llaman AMD Ryzen™ Serie 5000.",
+        "descripcion":"Los 4 para juegos mejor valorados del mundo se llaman AMD Ryzen™ Serie 5000.",
         "marca":"AMD",
         "modelo":"Ryzen 5 5500",
         "precio":100,
         "stock":40,
         "peso_kg":1,
         "color":"",
-        "categoria":"Procesadores",
-        "proveedor":"REC LINE"
+        "categoria":"4",
+        "proveedor":"4"
     },
     {
         "id_producto": 12,
         "nombre": "AMD Ryzen 5 7600X",
-        "descripcion":"Presentamos la serie AMD Ryzen™ 7000. Los procesadores para computadoras de escritorio más avanzados que existen para jugadores y creadores. Bienvenido a la nueva era del rendimiento. La serie AMD Ryzen 7000 saca a relucir la velocidad descomunal de “Zen 4” y su potencia pura para que los jugadores y creadores puedan procesar cualquier juego o flujo de trabajo que se cruce en su camino. Los procesadores de PC más avanzados del mundo para jugadores y creadores amplían el liderazgo de rendimiento de AMD para potenciar tu PC.",
+        "descripcion":"Presentamos la serie AMD Ryzen™ 7000. Los 4 para computadoras de escritorio más avanzados que existen para jugadores y creadores. Bienvenido a la nueva era del rendimiento. La serie AMD Ryzen 7000 saca a relucir la velocidad descomunal de “Zen 4” y su potencia pura para que los jugadores y creadores puedan procesar cualquier juego o flujo de trabajo que se cruce en su camino. Los 4 de PC más avanzados del mundo para jugadores y creadores amplían el liderazgo de rendimiento de AMD para potenciar tu PC.",
         "marca":"AMD",
         "modelo":"Ryzen 5 7600X",
         "precio":229,
         "stock":20,
         "peso_kg":1,
         "color":"",
-        "categoria":"Procesadores",
-        "proveedor":"REC LINE"
+        "categoria":"4",
+        "proveedor":"4"
     },
     {
         "id_producto": 13,
@@ -165,8 +165,8 @@
         "stock":20,
         "peso_kg":1,
         "color":"blanco",
-        "categoria":"Disipadores",
-        "proveedor":"OPEX"
+        "categoria":"5",
+        "proveedor":"5"
     },
     {
         "id_producto": 14,
@@ -178,8 +178,8 @@
         "stock":34,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Disipadores",
-        "proveedor":"OPEX"
+        "categoria":"5",
+        "proveedor":"5"
     },
     {
         "id_producto": 15,
@@ -191,8 +191,8 @@
         "stock":17,
         "peso_kg":1,
         "color":"blanco",
-        "categoria":"Disipadores",
-        "proveedor":"OPEX"
+        "categoria":"5",
+        "proveedor":"5"
     },
     {
         "id_producto": 16,
@@ -204,21 +204,21 @@
         "stock":13,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Memorias RAM",
-        "proveedor":"OPEX"
+        "categoria":"6",
+        "proveedor":"5"
     },
     {
         "id_producto": 17,
         "nombre":"Corsair Vengeance RGB DDR5 6000MHz PC5-48000 32GB 2x16GB CL36 Negra",
-        "descripcion":"La memoria CORSAIR VENGEANCE RGB DDR5 ofrece rendimiento DDR5, frecuencias más altas y mayores capacidades optimizadas para placas base Intel®, mientras ilumina su PC con iluminación RGB de diez zonas dinámica y direccionable individualmente.",
+        "descripcion":"La memoria CORSAIR VENGEANCE RGB DDR5 ofrece rendimiento DDR5, frecuencias más altas y mayores capacidades optimizadas para 3 Intel®, mientras ilumina su PC con iluminación RGB de diez zonas dinámica y direccionable individualmente.",
         "marca":"CORSARI",
         "modelo":"VENGEANCE RGB DDR5 6000MHz PC5-48000 32GB 2X16GB CL36 NEGRA",
         "precio":82,
         "stock":33,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Memorias RAM",
-        "proveedor":"OPEX"
+        "categoria":"6",
+        "proveedor":"5"
     },
     {
         "id_producto": 18,
@@ -230,8 +230,8 @@
         "stock":11,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Memorias RAM",
-        "proveedor":"OPEX"
+        "categoria":"6",
+        "proveedor":"5"
     },
     {
         "id_producto":19,
@@ -243,8 +243,8 @@
         "stock":15,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Almacenamiento",
-        "proveedor":"MegaSur"
+        "categoria":"7",
+        "proveedor":"1"
     },
     {
         "id_producto":20,
@@ -256,8 +256,8 @@
         "stock":22,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Almacenamiento",
-        "proveedor":"MegaSur"
+        "categoria":"7",
+        "proveedor":"1"
     },
     {
         "id_producto":21,
@@ -269,8 +269,8 @@
         "stock":13,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Almacenamiento",
-        "proveedor":"MegaSur"
+        "categoria":"7",
+        "proveedor":"1"
     },
     {
         "id_producto":22,
@@ -282,8 +282,8 @@
         "stock":11,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Fuentes de Alimentacion",
-        "proveedor":"DMI Computer"
+        "categoria":"8",
+        "proveedor":"2"
     },
     {
         "id_producto":23,
@@ -295,8 +295,8 @@
         "stock":32,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Fuentes de Alimentacion",
-        "proveedor":"DMI Computer"
+        "categoria":"8",
+        "proveedor":"2"
     },
     {
         "id_producto":24,
@@ -308,7 +308,7 @@
         "stock":10,
         "peso_kg":1,
         "color":"negro",
-        "categoria":"Fuentes de Alimentacion",
-        "proveedor":"DMI Computer"
+        "categoria":"8",
+        "proveedor":"2"
     }
 ]

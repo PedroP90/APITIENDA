@@ -1,5 +1,6 @@
 import { Categoria } from "src/modulos/categorias/entities/categoria.entity";
-import { Column, Entity, ManyToMany, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
+import { Proveedor } from "src/modulos/proveedor/entities/proveedor.entity";
+import { BeforeInsert, Column, Entity, ManyToMany, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class Producto {
@@ -55,16 +56,38 @@ export class Producto {
     })
     color:string
 
-    @Column('text',{
-        unique:false,
-        nullable:false
-    })
-    proveedor:string
+    @BeforeInsert()
+    updateNombre(){
+        if (this.nombre) {
+            this.nombre = this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
+        }
+    }
+
+    // @Column('text',{
+    //     unique:false,
+    //     nullable:false
+    // })
+    // proveedor:string
+    
+    @ManyToOne(
+        () => Proveedor,
+        (proveedor) => proveedor.productos,
+        {cascade: true}
+    )
+    proveedor?:Proveedor
+
+
+    // @Column('text',{
+    //     unique:false,
+    //     nullable:false
+    // })
+    // categoria:string
+
 
     @ManyToOne(
         () => Categoria,
-        (categoria) => categoria.productos,
-        {cascade:true}
+        (idcat) => idcat.productos,
+        {cascade: true}
     )
     categoria?:Categoria
 }

@@ -18,17 +18,17 @@ export class ProveedorController {
   }
 
   @Get(':id_proveedor')
-  detalle1Prov(@Param('id_proveedor') id_proveedor: number) {
+  detalle1Prov(@Param('id_proveedor') id_proveedor: string) {
     return this.proveedorService.detalle1Prov(id_proveedor);
   }
 
   @Patch(':id_proveedor')
-  update(@Param('id_proveedor',ParseIntPipe) id_proveedor: number, @Body() updateProveedorDto: UpdateProveedorDto) {
+  update(@Param('id_proveedor') id_proveedor: string, @Body() updateProveedorDto: UpdateProveedorDto) {
     return this.proveedorService.updateProv(id_proveedor, updateProveedorDto);
   }
 
   @Delete(':id_proveedor')
-  remove(@Param('id_proveedor') id_proveedor: number) {
+  remove(@Param('id_proveedor') id_proveedor: string) {
     return this.proveedorService.delete1cat(id_proveedor);
   }
 }

@@ -3,9 +3,6 @@ import { IsNumber, IsString, Matches, MinLength } from "class-validator";
 
 export class CreateUsuarioDto {
 
-    @IsNumber()
-    id: number;
-
     @IsString()
     @MinLength(5)
     nombreUsuario: string;
