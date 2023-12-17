@@ -11,6 +11,9 @@ import { CategoriasModule } from '../categorias/categorias.module';
   imports:[
     TypeOrmModule.forFeature([Producto]),
     CategoriasModule
+  ],
+  exports:[
+    TypeOrmModule,ProductosService
   ]
 })
 export class ProductosModule {}

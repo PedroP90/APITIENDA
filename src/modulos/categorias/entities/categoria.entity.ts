@@ -19,9 +19,9 @@ export class Categoria {
     })
     descripcion: string
 
-    @OneToMany(
-        ()=>Producto,
-        (producto)=> producto.categoria
-    )
-    productos?:Producto[]
+    @Column('text',{
+        nullable:true,
+        unique:false
+    })
+    productos?:string
 }

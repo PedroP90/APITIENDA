@@ -44,23 +44,21 @@ export class ProveedorService {
   }
 
   // insertar proveedores
-  async newProv(createProveedorDto: CreateProveedorDto) {
+  async newProv(CreateProveedorDto: CreateProveedorDto) {
     try {
-      const proveedor = this.proveedorRepository.create(createProveedorDto)
+      const proveedor = this.proveedorRepository.create(CreateProveedorDto)
       await this.proveedorRepository.save(proveedor)
-      console.log(createProveedorDto)
+      // console.log(createCategoriaDto)
       return {
-        message: "Proveedor creado correctamente",
+        message: `proveedor creado`,
         data: proveedor,
         status: 200
       }
     } catch (error) {
-      throw new InternalServerErrorException('fallo al crear proveedor')
     }
   }
-
   // eliminar proveedor
-  async delete1cat(id_proveedor: number) {
+  async delete1Prov(id_proveedor: number) {
     try {
       const proveedor = await this.proveedorRepository.findOne({
         where: {
@@ -92,6 +90,16 @@ export class ProveedorService {
       }
     } catch (error) {
       throw new InternalServerErrorException('fallo al actualizar proveedor')
+    }
+  }
+
+  // eliminar proveedores masivo
+  async deleteAllProv(){
+    const consulta=this.proveedorRepository.createQueryBuilder('proveedor');
+    try {
+      return await consulta.delete().where({}).execute()
+    } catch (error) {
+      throw new InternalServerErrorException('fallo al eliminar proveedores para carga masiva')
     }
   }
 }

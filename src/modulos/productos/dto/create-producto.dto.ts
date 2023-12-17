@@ -37,7 +37,7 @@ export class CreateProductoDto {
     color:string
 
     @IsOptional()
-    categoria?:Categoria
+    categoria?:string
 
     @IsString()
     @MinLength(3)

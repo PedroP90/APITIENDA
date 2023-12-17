@@ -19,13 +19,13 @@ export class Proveedor {
 
     @Column('text',{
         nullable:true,
-        unique:true
+        unique:false
     })
     telefono:string
 
     @Column('text',{
         nullable:true,
-        unique:true
+        unique:false
     })
     mail:string
     

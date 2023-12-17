@@ -4,10 +4,16 @@ import { CreateClienteDto } from '../clientes/dto/create-cliente.dto';
 import * as seedClientes from '../seed/datos/clientes.json'
 import * as seedUsuarios from '../seed/datos/usuarios.json'
 import * as categoriasIniciales from '../seed/datos/categorias.json'
+import * as ProveedoresIniciales from '../seed/datos/proveedores.json'
+import * as ProductosIniciales from '../seed/datos/productos.json'
 import { UsuariosService } from '../usuarios/usuarios.service';
 import { CreateUsuarioDto } from '../usuarios/dto/create-usuario.dto';
 import { CategoriasService } from '../categorias/categorias.service';
 import { CreateCategoriaDto } from '../categorias/dto/create-categoria.dto';
+import { ProveedorService } from '../proveedor/proveedor.service';
+import { CreateProveedorDto } from '../proveedor/dto/create-proveedor.dto';
+import { ProductosService } from '../productos/productos.service';
+import { CreateProductoDto } from '../productos/dto/create-producto.dto';
 
 
 @Injectable()
@@ -16,16 +22,46 @@ export class SeedService {
   constructor (
     private readonly clienteService: ClientesService,
     private readonly usuarioService: UsuariosService,
-    private readonly categoriasService:CategoriasService
-    ){}
+    private readonly categoriasService:CategoriasService,
+    private readonly proveService:ProveedorService,
+    private readonly procService:ProductosService
+  ){}
   
   public async cargaMasiva(){
-    this.clienteService.deleteAllClientes();
-    this.usuarioService.deleteAllUsuarios();
-    this.categoriasService.deleteAllCat()
-    await this.insertNewClientes();
-    await this.insertNewUsuarios();
-    await this.insertNewCats()
+    // this.clienteService.deleteAllClientes();
+    // this.usuarioService.deleteAllUsuarios();
+    // this.categoriasService.deleteAllCat();
+    //this.proveService.deleteAllProv();
+    // await this.insertNewCats();
+    // console.log("categorias insertadas")
+    // this.insertNewProvs();
+    // console.log("proveedores insertadas")
+    // this.insertNewProcs();
+
+
+    this.categoriasService.deleteAllCat();
+    this.proveService.deleteAllProv();
+    await this.procService.deleteAllProcs();
+    this.insertNewCats()
+    this.insertNewProvs()
+    console.log('categorias y proveedores insertados')
+    await this.insertNewProcs()
+    console.log('productos insertados')
+    this.usuarioService.deleteAllUsuarios()
+    await this.clienteService.deleteAllClientes()
+    this.insertNewClientes()
+    await this.insertNewUsuarios()
+    console.log('clientes y usuarios insertados')
+
+    // await this.insertNewClientes();
+    // await this.insertNewUsuarios();
+    // console.log('clientes y usuarios insertados')
+    // this.insertNewCats();
+    // console.log('categorias insertadas')
+    // this.insertNewProcs()
+    // console.log("productos insertados")
+    // await this.insertNewProvs()
+    // console.log("proveedores insertados")
   }
 
   private async insertNewClientes(){
@@ -56,6 +92,27 @@ export class SeedService {
       PromesaInsertCats.push(this.categoriasService.newcat(categoria))
     })
     const resultado = await Promise.all(PromesaInsertCats)
+    return true;
+  }
+
+  private async insertNewProvs(){
+    await this.proveService.deleteAllProv()
+    const PromesaInsertProvs=[]
+    ProveedoresIniciales.forEach((proveedor:CreateProveedorDto)=>{
+      PromesaInsertProvs.push(this.proveService.newProv(proveedor))
+    })
+    const resultado = await Promise.all(PromesaInsertProvs)
+    return true;
+  }
+
+  private async insertNewProcs(){
+    await this.procService.deleteAllProcs()
+    const PromesaInsertProvs=[]
+    const seedProvs=ProductosIniciales
+    seedProvs.forEach(async(producto:CreateProductoDto)=>{
+      PromesaInsertProvs.push(this.procService.newProd(producto))
+    })
+    const resultado = await Promise.all(PromesaInsertProvs)
     return true;
   }
 

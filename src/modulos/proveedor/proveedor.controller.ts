@@ -29,6 +29,6 @@ export class ProveedorController {
 
   @Delete(':id_proveedor')
   remove(@Param('id_proveedor') id_proveedor: number) {
-    return this.proveedorService.delete1cat(id_proveedor);
+    return this.proveedorService.delete1Prov(id_proveedor);
   }
 }

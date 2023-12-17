@@ -1,53 +1,52 @@
 [
-    {
-      "id_proveedor":1,
-      "nombre": "MegaSur",
-      "cif": "B76365789",
-      "telefono": "123-456-789",
-      "mail": "megasur@example.com",
-      "pais": "España",
-      "codigo_postal": "12345",
-      "direccion": "Calle MegaSur #123"
-    },
-    {
-      "id_proveedor":2,
-      "nombre": "DMI Computer",
-      "cif": "B16365789",
-      "telefono": "987-654-321",
-      "mail": "mail@dmicomputer.com",
-      "pais": "Francia",
-      "codigo_postal": "54321",
-      "direccion": "Avenida DMI Computer #456"
-    },
-    {
-      "id_proveedor":3,
-      "nombre": "Depau",
-      "cif": "B72365789",
-      "telefono": "111-222-333",
-      "mail": "mail@depau.com",
-      "pais": "Alemania",
-      "codigo_postal": "67890",
-      "direccion": "Plaza Depau #789"
-    },
-    {
-      "id_proveedor":4,
-      "nombre": "REC LINE",
-      "cif": "B76365789",
-      "telefono": "555-555-555",
-      "mail": "mail@recline.com",
-      "pais": "Reino Unido",
-      "codigo_postal": "ABCDE",
-      "direccion": "Calle REC LINE #555"
-    },
-    {
-      "id_proveedor":5,
-      "nombre": "OPEX",
-      "cif": "B76345789",
-      "telefono": "999-999-999",
-      "mail": "mail@opex.com",
-      "pais": "Italia",
-      "codigo_postal": "XYZ123",
-      "direccion": "Avenida OPEX #999"
-    }
-  ]
-  
+  {
+    "id_proveedor": 1,
+    "nombre": "MegaFran",
+    "cif": "B76365789",
+    "telefono": "123-456-789",
+    "mail": "megasur@example.com",
+    "pais": "España",
+    "codigo_postal": "12345",
+    "direccion": "Calle MegaSur #123"
+  },
+  {
+    "id_proveedor": 2,
+    "nombre": "DMI Computer",
+    "cif": "B16365789",
+    "telefono": "987-654-321",
+    "mail": "mail@dmicomputer.com",
+    "pais": "Francia",
+    "codigo_postal": "54321",
+    "direccion": "Avenida DMI Computer #456"
+  },
+  {
+    "id_proveedor": 3,
+    "nombre": "Depau",
+    "cif": "B72365789",
+    "telefono": "111-222-333",
+    "mail": "mail@depau.com",
+    "pais": "Alemania",
+    "codigo_postal": "67890",
+    "direccion": "Plaza Depau #789"
+  },
+  {
+    "id_proveedor": 5,
+    "nombre": "OPEX",
+    "cif": "B76345789",
+    "telefono": "999-999-999",
+    "mail": "mail@opex.com",
+    "pais": "Italia",
+    "codigo_postal": "XYZ123",
+    "direccion": "Avenida OPEX #999"
+  },
+  {
+    "id_proveedor": "4",
+    "nombre": "pakito",
+    "cif": "b12345678",
+    "telefono": "123-334-123",
+    "mail": "pako@pako.net",
+    "pais": "colombia",
+    "codigo_postal": "4321",
+    "direccion": "calle las minas numero 12"
+  }
+]

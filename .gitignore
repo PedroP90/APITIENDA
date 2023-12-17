@@ -2,7 +2,8 @@
 /dist
 /node_modules
 /postgres
-
+/.env
+*.env
 # Logs
 logs
 *.log
@@ -34,5 +35,3 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
-.env

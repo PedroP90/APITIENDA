@@ -61,10 +61,9 @@ export class Producto {
     })
     proveedor:string
 
-    @ManyToOne(
-        () => Categoria,
-        (categoria) => categoria.productos,
-        {cascade:true}
-    )
-    categoria?:Categoria
+    @Column('text',{
+        unique:false,
+        nullable:false
+    })
+    categoria?:string
 }

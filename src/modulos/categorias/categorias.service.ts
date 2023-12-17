@@ -43,7 +43,7 @@ export class CategoriasService {
     try {
       const categoria = this.categoriaRepository.create(createCategoriaDto)
       await this.categoriaRepository.save(categoria)
-      console.log(createCategoriaDto)
+      // console.log(createCategoriaDto)
       return {
         message: `Categoria creada`,
         data: categoria,
@@ -56,7 +56,7 @@ export class CategoriasService {
 
   
 
-  // eliminar categorias
+  // eliminar categoria
   async delete1Cat(id_categoria:number) {
     try {
       const categoria = await this.categoriaRepository.findOne({
@@ -72,6 +72,7 @@ export class CategoriasService {
     }
   }
 
+  // actualizar categoria
   async updateCat(id_categoria: number, updateCategoriaDto: UpdateCategoriaDto) {
     try {
       const categoria = await this.categoriaRepository.findOne({
@@ -89,12 +90,13 @@ export class CategoriasService {
     }
   }
 
+  // eliminar cateogiras masivo
   async deleteAllCat(){
     const consulta=this.categoriaRepository.createQueryBuilder('categoria');
     try {
       return await consulta.delete().where({}).execute()
     } catch (error) {
-      throw new InternalServerErrorException('fallo al hacer al eliminar cats para carga masiva')
+      throw new InternalServerErrorException('fallo al eliminar categorias para carga masiva')
     }
   }
 
