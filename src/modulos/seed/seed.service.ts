@@ -39,19 +39,19 @@ export class SeedService {
     // this.insertNewProcs();
 
 
+    this.usuarioService.deleteAllUsuarios();
+    this.procService.deleteAllProcs();
+    this.clienteService.deleteAllClientes()
     this.categoriasService.deleteAllCat();
     this.proveService.deleteAllProv();
-    await this.procService.deleteAllProcs();
-    this.insertNewCats()
-    this.insertNewProvs()
-    console.log('categorias y proveedores insertados')
-    await this.insertNewProcs()
-    console.log('productos insertados')
-    this.usuarioService.deleteAllUsuarios()
-    await this.clienteService.deleteAllClientes()
-    this.insertNewClientes()
-    await this.insertNewUsuarios()
-    console.log('clientes y usuarios insertados')
+    this.insertNewCats();
+    this.insertNewProvs();
+    this.insertNewClientes();
+    console.log('categorias y proveedores insertados');
+    await this.insertNewProcs();
+    console.log('productos insertados');
+    await this.insertNewUsuarios();
+    console.log('clientes y usuarios insertados');
 
     // await this.insertNewClientes();
     // await this.insertNewUsuarios();
