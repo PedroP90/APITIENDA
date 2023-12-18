@@ -5,8 +5,8 @@ import { BeforeInsert, Column, Entity, ManyToMany, ManyToOne, OneToMany, Primary
 @Entity()
 export class Producto {
 
-    @PrimaryColumn('numeric')
-    id_producto: number
+    @PrimaryColumn('text')
+    id_producto: string
 
     @Column('text', {
         nullable: false,
@@ -16,13 +16,13 @@ export class Producto {
 
     @Column('text',{
         unique:false,
-        nullable:false
+        nullable:true
     })
     marca:string
     
     @Column('text',{
         unique:false,
-        nullable:false
+        nullable:true
     })
     modelo:string
 
@@ -34,13 +34,13 @@ export class Producto {
 
     @Column('numeric',{
         unique:false,
-        nullable:false
+        nullable:true
     })
     stock:number
 
     @Column('numeric',{
         unique:false,
-        nullable:false
+        nullable:true
     })
     precio:number
 
@@ -62,12 +62,6 @@ export class Producto {
             this.nombre = this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
         }
     }
-
-    // @Column('text',{
-    //     unique:false,
-    //     nullable:false
-    // })
-    // proveedor:string
     
     @ManyToOne(
         () => Proveedor,
@@ -75,14 +69,6 @@ export class Producto {
         {cascade: true}
     )
     proveedor?:Proveedor
-
-
-    // @Column('text',{
-    //     unique:false,
-    //     nullable:false
-    // })
-    // categoria:string
-
 
     @ManyToOne(
         () => Categoria,

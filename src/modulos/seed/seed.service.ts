@@ -28,40 +28,21 @@ export class SeedService {
   ){}
   
   public async cargaMasiva(){
-    // this.clienteService.deleteAllClientes();
-    // this.usuarioService.deleteAllUsuarios();
-    // this.categoriasService.deleteAllCat();
-    //this.proveService.deleteAllProv();
-    // await this.insertNewCats();
-    // console.log("categorias insertadas")
-    // this.insertNewProvs();
-    // console.log("proveedores insertadas")
-    // this.insertNewProcs();
-
 
     this.usuarioService.deleteAllUsuarios();
     this.procService.deleteAllProcs();
     this.clienteService.deleteAllClientes()
     this.categoriasService.deleteAllCat();
     this.proveService.deleteAllProv();
-    this.insertNewCats();
-    this.insertNewProvs();
-    this.insertNewClientes();
+    await this.insertNewCats();
+    await this.insertNewProvs();
+    await this.insertNewClientes();
     console.log('categorias y proveedores insertados');
     await this.insertNewProcs();
     console.log('productos insertados');
     await this.insertNewUsuarios();
     console.log('clientes y usuarios insertados');
 
-    // await this.insertNewClientes();
-    // await this.insertNewUsuarios();
-    // console.log('clientes y usuarios insertados')
-    // this.insertNewCats();
-    // console.log('categorias insertadas')
-    // this.insertNewProcs()
-    // console.log("productos insertados")
-    // await this.insertNewProvs()
-    // console.log("proveedores insertados")
   }
 
   private async insertNewClientes(){

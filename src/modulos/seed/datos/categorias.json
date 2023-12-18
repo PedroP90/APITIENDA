@@ -1,78 +1,43 @@
 [
-    {
-      "id_categoria": "1",
-      "nombre": "Ordenadores de Sobremesa",
-      "descripcion": "¿Buscas un equipo de trabajo fijo? En esta categoría encontrarás Ordenadores de sobremesa para tu hogar o para tu lugar de trabajo."
-    },
-    {
-      "id_categoria": "2",
-      "nombre": "Portátiles",
-      "descripcion": "Encuentra tu ordenador para llevar a cualquier lugar."
-    },
-    {
-      "id_categoria": "3",
-      "nombre": "Placas Base",
-      "descripcion": "Aumenta el rendimiento y la potencia de tus PCs con placas base de alta calidad."
-    },
-    {
-      "id_categoria": "4",
-      "nombre": "Procesadores",
-      "descripcion": "Elige entre los mejores procesadores del mercado."
-    },
-    {
-      "id_categoria": "5",
-      "nombre": "Disipadores",
-      "descripcion": "Disipadores de calor, tanto por aire como líquidos para mantener a tu PC en pleno funcionamiento."
-    },
-    {
-      "id_categoria": "6",
-      "nombre": "Memorias RAM",
-      "descripcion": "A mayor cantidad, mayor cantidad de programas abiertos. ¡Compra sin miedo!"
-    },
-    {
-      "id_categoria": "7",
-      "nombre": "Almacenamiento",
-      "descripcion": "¡No pierdas tus archivos! Compra un disco duro SSD para una carga de datos más veloz."
-    },
-    {
-      "id_categoria": "8",
-      "nombre": "Fuentes de alimentación",
-      "descripcion": "La fuente adecuada es fundamental en un sistema completo."
-    },
-    {
-      "id_categoria": "9",
-      "nombre": "Tarjetas gráficas",
-      "descripcion": "Puedes no necesitarlas si no vas a realizar tareas pesadas en tu equipo."
-    },
-    {
-      "id_categoria": "10",
-      "nombre": "Gabinetes",
-      "descripcion": "Elige entre cientos de cajas para ordenador, con luces, ventiladores, transparentes... Tus gustos, tu caja."
-    },
-    {
-      "id_categoria": "11",
-      "nombre": "Monitores",
-      "descripcion": "Admira hermosas imágenes en tu monitor perfecto."
-    },
-    {
-      "id_categoria": "12",
-      "nombre": "Teclados",
-      "descripcion": "Siente y escucha lo que pulsas con un teclado mecánico o disfruta del silencio con un teclado de membrana."
-    },
-    {
-      "id_categoria": "13",
-      "nombre": "Ratones",
-      "descripcion": "Elije entre cientos de modelos, cada uno con sus caraterísticas únicas."
-    },
-    {
-      "id_categoria": "14",
-      "nombre": "Auriculares",
-      "descripcion": "Accesorios de audio para una experiencia inmersiva."
-    },
-    {
-      "id_categoria": "15",
-      "nombre": "Sillas",
-      "descripcion": "Explora nuestro inmenso catálogo de sillas ergonómicas."
-    }
-  ]
+  {
+    "id_categoria": "1",
+    "nombre": "Ordenadores de Sobremesa",
+    "descripcion": "¿Buscas un equipo de trabajo fijo? En esta categoría encontrarás Ordenadores de sobremesa para tu hogar o para tu lugar de trabajo."
+  },
+  {
+    "id_categoria": "2",
+    "nombre": "Portátiles",
+    "descripcion": "Encuentra tu ordenador para llevar a cualquier lugar."
+  },
+  {
+    "id_categoria": "3",
+    "nombre": "Placas Base",
+    "descripcion": "Aumenta el rendimiento y la potencia de tus PCs con placas base de alta calidad."
+  },
+  {
+    "id_categoria": "4",
+    "nombre": "Procesadores",
+    "descripcion": "Elige entre los mejores procesadores del mercado."
+  },
+  {
+    "id_categoria": "5",
+    "nombre": "Disipadores",
+    "descripcion": "Disipadores de calor, tanto por aire como líquidos para mantener a tu PC en pleno funcionamiento."
+  },
+  {
+    "id_categoria": "6",
+    "nombre": "Memorias RAM",
+    "descripcion": "A mayor cantidad, mayor cantidad de programas abiertos. ¡Compra sin miedo!"
+  },
+  {
+    "id_categoria": "7",
+    "nombre": "Almacenamiento",
+    "descripcion": "¡No pierdas tus archivos! Compra un disco duro SSD para una carga de datos más veloz."
+  },
+  {
+    "id_categoria": "8",
+    "nombre": "Fuentes de alimentación",
+    "descripcion": "La fuente adecuada es fundamental en un sistema completo."
+  }
   
+]

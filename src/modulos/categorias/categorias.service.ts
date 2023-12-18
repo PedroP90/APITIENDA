@@ -98,13 +98,13 @@ export class CategoriasService {
     }
   }
 
+ 
   // eliminar cateogiras masivo
   async deleteAllCat(){
     const consulta=this.categoriaRepository.createQueryBuilder('categoria');
     try {
       return await consulta.delete().where({}).execute()
     } catch (error) {
-      throw new InternalServerErrorException('fallo al eliminar categorias para carga masiva')
     }
   }
 

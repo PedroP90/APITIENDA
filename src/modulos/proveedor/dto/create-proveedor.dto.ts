@@ -1,9 +1,6 @@
-import { IsNumber, IsOptional, IsString, MinLength } from "class-validator";
+import { IsOptional, IsString, MinLength } from "class-validator";
 
 export class CreateProveedorDto {
-
-    @IsString()
-    id_proveedor:string
 
     @IsString()
     @MinLength(3)

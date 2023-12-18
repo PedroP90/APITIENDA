@@ -18,7 +18,7 @@ export class ProductosController {
   }
 
   @Get(':id_producto')
-  detalle1prov(@Param('id_producto',ParseIntPipe) id_producto: number) {
+  detalle1prov(@Param('id_producto') id_producto: string) {
     return this.productosService.detalle1prov(id_producto);
   }
 
@@ -28,7 +28,7 @@ export class ProductosController {
   }
 
   @Delete(':id_producto')
-  remove(@Param('id_producto',ParseIntPipe) id_producto: number) {
+  remove(@Param('id_producto') id_producto: string) {
     return this.productosService.delete1Proc(id_producto);
   }
 }

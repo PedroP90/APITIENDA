@@ -1,10 +1,12 @@
 import { Producto } from "src/modulos/productos/entities/producto.entity";
-import { Entity, PrimaryColumn,Column, BeforeInsert, OneToMany } from "typeorm";
+import { Entity, PrimaryColumn,Column, BeforeInsert, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Proveedor {
+
+
     @PrimaryColumn('text')
-    id_proveedor:string
+    cif:string
 
     @Column('text',{
         nullable:false,
@@ -12,11 +14,6 @@ export class Proveedor {
     })
     nombre:string
 
-    @Column('text',{
-        nullable:false,
-        unique:true
-    })
-    cif:string
 
     @Column('text',{
         nullable:true,

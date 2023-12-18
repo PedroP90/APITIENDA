@@ -3,8 +3,8 @@ import { IsNumber, IsOptional, IsString, MinLength } from "class-validator";
 
 export class CreateProductoDto {
     
-    @IsNumber()
-    id_producto:number
+    @IsString()
+    id_producto:string
 
     @IsString()
     @MinLength(5)
@@ -37,7 +37,7 @@ export class CreateProductoDto {
     color:string
 
     @IsString()
-    categoria?:string
+    categoria:string
 
     @IsString()
     proveedor:string

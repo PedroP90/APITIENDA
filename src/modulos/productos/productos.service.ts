@@ -32,7 +32,7 @@ export class ProductosService {
   }
 
   // detalle de producto
-  async detalle1prov(id_producto:number){
+  async detalle1prov(id_producto:string){
     const producto= await this.productoRepository.find({
       where:{
         id_producto
@@ -86,7 +86,7 @@ export class ProductosService {
   // }
 
   // eliminar producto
-  async delete1Proc(id_producto:number){
+  async delete1Proc(id_producto:string){
     try {
       const producto = await this.productoRepository.findOne({
         where:{id_producto}

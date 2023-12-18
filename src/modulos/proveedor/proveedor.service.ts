@@ -28,11 +28,11 @@ export class ProveedorService {
   }
 
   // detalle proveedores
-  async detalle1Prov(id_proveedor: string) {
+  async detalle1Prov(cif: string) {
     try {
       const proveedor = await this.proveedorRepository.findOne({
         where: { 
-          id_proveedor
+          cif
         }
       })
       return proveedor;
@@ -57,11 +57,11 @@ export class ProveedorService {
     }
   }
   // eliminar proveedor
-  async delete1Prov(id_proveedor: string) {
+  async delete1Prov(cif: string) {
     try {
       const proveedor = await this.proveedorRepository.findOne({
         where: {
-          id_proveedor
+          cif
         }
       })
       await this.proveedorRepository.remove(proveedor)
@@ -75,10 +75,10 @@ export class ProveedorService {
   }
 
   // actualizar proveedor
-  async updateProv(id_proveedor: string, updateProveedorDto: UpdateProveedorDto) {
+  async updateProv(cif: string, updateProveedorDto: UpdateProveedorDto) {
     try {
       const proveedor = await this.proveedorRepository.findOne({
-        where: { id_proveedor }
+        where: { cif }
       })
       this.proveedorRepository.merge(proveedor, updateProveedorDto)
       await this.proveedorRepository.save(proveedor)

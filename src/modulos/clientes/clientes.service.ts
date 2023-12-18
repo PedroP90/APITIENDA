@@ -83,7 +83,7 @@ export class ClientesService {
         .where({})
         .execute()
     }catch(error){
-      throw new InternalServerErrorException('sysadmin...')
+      
     }
   }
 }
