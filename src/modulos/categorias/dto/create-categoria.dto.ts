@@ -1,9 +1,9 @@
-import {IsNumber, IsOptional, IsString, MinLength } from "class-validator";
+import { IsOptional, IsString, MinLength } from "class-validator";
 
 export class CreateCategoriaDto {
     
-    @IsNumber()
-    id_categoria: number;
+    @IsString()
+    id_categoria: string;
 
     @IsString()
     @MinLength(5)

@@ -28,20 +28,19 @@ export class ProveedorService {
   }
 
   // detalle proveedores
-  async detalle1Prov(id_proveedor: number) {
+  async detalle1Prov(id_proveedor: string) {
     try {
       const proveedor = await this.proveedorRepository.findOne({
-        where: { id_proveedor }
+        where: { 
+          id_proveedor
+        }
       })
-      return {
-        message: "detalles del proveedor",
-        data: proveedor,
-        status: 200
-      }
+      return proveedor;
     } catch (error) {
       throw new InternalServerErrorException('fallo al detallar proveedor')
     }
   }
+
 
   // insertar proveedores
   async newProv(CreateProveedorDto: CreateProveedorDto) {
@@ -58,7 +57,7 @@ export class ProveedorService {
     }
   }
   // eliminar proveedor
-  async delete1Prov(id_proveedor: number) {
+  async delete1Prov(id_proveedor: string) {
     try {
       const proveedor = await this.proveedorRepository.findOne({
         where: {
@@ -76,7 +75,7 @@ export class ProveedorService {
   }
 
   // actualizar proveedor
-  async updateProv(id_proveedor: number, updateProveedorDto: UpdateProveedorDto) {
+  async updateProv(id_proveedor: string, updateProveedorDto: UpdateProveedorDto) {
     try {
       const proveedor = await this.proveedorRepository.findOne({
         where: { id_proveedor }

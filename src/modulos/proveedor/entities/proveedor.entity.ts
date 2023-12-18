@@ -1,9 +1,10 @@
-import { Entity, PrimaryColumn,Column } from "typeorm";
+import { Producto } from "src/modulos/productos/entities/producto.entity";
+import { Entity, PrimaryColumn,Column, BeforeInsert, OneToMany } from "typeorm";
 
 @Entity()
 export class Proveedor {
-    @PrimaryColumn('numeric')
-    id_proveedor:number
+    @PrimaryColumn('text')
+    id_proveedor:string
 
     @Column('text',{
         nullable:false,
@@ -46,5 +47,20 @@ export class Proveedor {
         unique:false
     })
     direccion:string
+
+    @BeforeInsert()
+    updateNombre(){
+        if (this.nombre) {
+            this.nombre = this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
+        }
+    }
+
+    @OneToMany(
+        ()=> Producto,
+        (producto)=> producto.proveedor,
+        { eager: true }
+    )
+    productos?: Producto[]
+    
 }
 

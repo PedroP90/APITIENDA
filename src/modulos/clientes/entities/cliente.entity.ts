@@ -1,5 +1,5 @@
 import { Usuario } from 'src/modulos/usuarios/entities/usuario.entity';
-import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
+import { BeforeInsert, Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
 
 
 @Entity()
@@ -39,6 +39,13 @@ export class Cliente {
         nullable: true
     })
     codigo_postal: string;
+
+    @BeforeInsert()
+    updateNombre(){
+        if (this.nombre) {
+            this.nombre = this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
+        }
+    }
 
     @OneToMany(
         () => Usuario,

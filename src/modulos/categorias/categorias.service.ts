@@ -26,16 +26,25 @@ export class CategoriasService {
     }
   }
 
-  // detalles de una categoria
-  async detalle1cat(id_categoria: number) {
-    try {
-      const categoria = await this.categoriaRepository.findOne({
-        where: { id_categoria }
-      })
-      return categoria
-    } catch (error) {
-      throw new InternalServerErrorException('fallo al detallar categoria')
-    }
+  // // detalles de una categoria
+  // async detalle1cat(id_categoria: number) {
+  //   try {
+  //     const categoria = await this.categoriaRepository.findOne({
+  //       where: { id_categoria }
+  //     })
+  //     return categoria
+  //   } catch (error) {
+  //     throw new InternalServerErrorException('fallo al detallar categoria')
+  //   }
+  // }
+
+  detalle1cat(id_categoria: string) {
+    const categoria = this.categoriaRepository.findOne({
+      where:{
+        id_categoria
+      }
+    });
+    return categoria;
   }
 
   //crear categorias
@@ -56,8 +65,8 @@ export class CategoriasService {
 
   
 
-  // eliminar categoria
-  async delete1Cat(id_categoria:number) {
+  // eliminar categorias
+  async delete1Cat(id_categoria:string) {
     try {
       const categoria = await this.categoriaRepository.findOne({
         where: { id_categoria }
@@ -72,8 +81,7 @@ export class CategoriasService {
     }
   }
 
-  // actualizar categoria
-  async updateCat(id_categoria: number, updateCategoriaDto: UpdateCategoriaDto) {
+  async updateCat(id_categoria: string, updateCategoriaDto: UpdateCategoriaDto) {
     try {
       const categoria = await this.categoriaRepository.findOne({
         where: { id_categoria }

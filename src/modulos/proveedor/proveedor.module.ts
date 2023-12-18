@@ -10,8 +10,6 @@ import { Proveedor } from './entities/proveedor.entity';
   imports:[
     TypeOrmModule.forFeature([Proveedor])
   ],
-  exports:[
-    TypeOrmModule,ProveedorService
-  ]
+  exports: [ ProveedorService, TypeOrmModule]
 })
 export class ProveedorModule {}

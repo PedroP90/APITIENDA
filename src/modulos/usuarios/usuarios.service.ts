@@ -6,6 +6,7 @@ import { Usuario } from './entities/usuario.entity';
 import { Repository } from 'typeorm';
 import { Cliente } from '../clientes/entities/cliente.entity';
 import { ClientesService } from '../clientes/clientes.service';
+import { UsupaginationDTO } from './dto/usupagination.dto';
 
 @Injectable()
 export class UsuariosService {
@@ -54,23 +55,39 @@ export class UsuariosService {
   //   }
   // }
 
-  async findAll() {
-    try {
-      const usuarios = await this.usuarioRepository.find()
-      return {
-        data: usuarios,
-        message: 'Listado de los usuarios',
-        status: 200
-      }
-    } catch (error) {
-      throw new InternalServerErrorException("fallo al listar todas las categorias")
-    }
-  }
+  // async findAll() {
+  //   try {
+  //     const usuarios = await this.usuarioRepository.find()
+  //     return {
+  //       data: usuarios,
+  //       message: 'Listado de los usuarios',
+  //       status: 200
+  //     }
+  //   } catch (error) {
+  //     throw new InternalServerErrorException("fallo al listar todas las categorias")
+  //   }
+  // }
 
-  findOne(id: number) {
+  async findAll(usupaginationDto: UsupaginationDTO) {
+    const { limit, offset } = usupaginationDto;
+    let usuario = await this.usuarioRepository.find()
+    return this.usuarioRepository.find({
+        take: limit,
+        skip: offset
+    });
+    // return {
+    //     data: libros,
+    //     msg: "listado de libros",
+    //     status: 200
+    // }
+}
+
+  
+
+  findOne(nombreUsuario: string) {
     const cliente = this.usuarioRepository.findOne({
       where:{
-        id
+        nombreUsuario
       },
       relations: {
         cliente: true

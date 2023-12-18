@@ -18,17 +18,17 @@ export class CategoriasController {
   }
 
   @Get(':id_categoria')
-  detalle1cat(@Param('id_categoria') id_categoria: number) {
+  detalle1cat(@Param('id_categoria') id_categoria: string) {
     return this.categoriasService.detalle1cat(id_categoria);
   }
 
   @Patch(':id_categoria')
-  updateCat(@Param('id_categoria',ParseIntPipe) id_categoria: number, @Body() updateCategoriaDto: UpdateCategoriaDto) {
+  updateCat(@Param('id_categoria') id_categoria: string, @Body() updateCategoriaDto: UpdateCategoriaDto) {
     return this.categoriasService.updateCat(id_categoria, updateCategoriaDto);
   }
 
   @Delete(':id_categoria')
-  delete1Cat(@Param('id_categoria') id_categoria: number) {
+  delete1Cat(@Param('id_categoria') id_categoria: string) {
     return this.categoriasService.delete1Cat(id_categoria);
   }
 }

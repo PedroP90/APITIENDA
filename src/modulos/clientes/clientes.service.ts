@@ -16,7 +16,6 @@ export class ClientesService {
 
   }
 
-  @Post()
   async create(createClienteDto: CreateClienteDto) {
     try{
       const cliente = this.clienteRepository.create(createClienteDto);
@@ -43,14 +42,7 @@ export class ClientesService {
       throw new InternalServerErrorException("fallo al listar todas las categorias")
     }
   }
-  // async findAll(paginationDto: PaginationDTO) {
-  //   const { limit, offset } = paginationDto;
-  //   let clientes = await this.clienteRepository.find()
-  //   return this.clienteRepository.find({
-  //       take: limit,
-  //       skip: offset
-  //   });
-  // }
+  
 
   findOne(nif: string) {
     const cliente = this.clienteRepository.findOne({
