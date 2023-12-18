@@ -3,9 +3,10 @@ import { UsuariosService } from './usuarios.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { UsupaginationDTO } from './dto/usupagination.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 
-
+@ApiTags('usuarios')
 @Controller('usuarios')
 export class UsuariosController {
   constructor(private readonly usuariosService: UsuariosService) {}
@@ -32,9 +33,9 @@ export class UsuariosController {
     return this.usuariosService.update(+id, updateUsuarioDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.usuariosService.remove(+id);
+  @Delete(':nombreUsuario')
+  remove(@Param('nombreUsuario') nombreUsuario: string) {
+    return this.usuariosService.remove(nombreUsuario);
   }
   
 }

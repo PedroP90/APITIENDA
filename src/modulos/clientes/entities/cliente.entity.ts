@@ -14,6 +14,13 @@ export class Cliente {
         nullable: true
     })
     nombre: string;
+
+    @BeforeInsert()
+    updateNombre(){
+        if (this.nombre) {
+            this.nombre = this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
+        }
+    }
     
     @Column('text',{
         nullable: true
@@ -39,13 +46,6 @@ export class Cliente {
         nullable: true
     })
     codigo_postal: string;
-
-    @BeforeInsert()
-    updateNombre(){
-        if (this.nombre) {
-            this.nombre = this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
-        }
-    }
 
     @OneToMany(
         () => Usuario,

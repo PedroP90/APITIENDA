@@ -37,11 +37,9 @@ export class SeedService {
     await this.insertNewCats();
     await this.insertNewProvs();
     await this.insertNewClientes();
-    console.log('categorias y proveedores insertados');
     await this.insertNewProcs();
-    console.log('productos insertados');
     await this.insertNewUsuarios();
-    console.log('clientes y usuarios insertados');
+    
 
   }
 

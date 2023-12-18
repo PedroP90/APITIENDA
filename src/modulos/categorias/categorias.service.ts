@@ -52,7 +52,6 @@ export class CategoriasService {
     try {
       const categoria = this.categoriaRepository.create(createCategoriaDto)
       await this.categoriaRepository.save(categoria)
-      // console.log(createCategoriaDto)
       return {
         message: `Categoria creada`,
         data: categoria,

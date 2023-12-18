@@ -55,7 +55,7 @@ export class ProductosService {
         const producto = this.productoRepository.create({...campos});
         const categoriaobj = await this.categoriaService.detalle1cat(categoria);
         const proveedorobj = await this.proveedorService.detalle1Prov(proveedor);      
-        console.log(categoriaobj);
+        
         producto.categoria = categoriaobj; // direccion del objeto autor relacionado con libros    
         producto.proveedor = proveedorobj
         await this.productoRepository.save(producto);

@@ -100,8 +100,10 @@ export class UsuariosService {
     return `This action updates a #${id} usuario`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} usuario`;
+  async remove(nombreUsuario: string) {
+    const cliente = await this.usuarioRepository.findOneBy({ nombreUsuario });
+    await this.usuarioRepository.remove(cliente);
+    return 'Usuario eliminado'
   }
 
   async deleteAllUsuarios(){
