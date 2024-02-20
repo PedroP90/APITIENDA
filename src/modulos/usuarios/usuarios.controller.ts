@@ -11,31 +11,31 @@ import { ApiTags } from '@nestjs/swagger';
 export class UsuariosController {
   constructor(private readonly usuariosService: UsuariosService) {}
 
-  @Post('/')
-  create(@Body() createUsuarioDto: CreateUsuarioDto) {
-    console.log('usuario creado')
-    return this.usuariosService.create(createUsuarioDto);
-  }
+  // @Post('/')
+  // create(@Body() createUsuarioDto: CreateUsuarioDto) {
+  //   console.log('usuario creado')
+  //   return this.usuariosService.create(createUsuarioDto);
+  // }
 
-  @Get('listar')
-    getall( @Query() usupaginationDTO: UsupaginationDTO ) {
-        console.log(usupaginationDTO)
-        return this.usuariosService.findAll(usupaginationDTO)
-    }
+  // @Get('listar')
+  //   getall( @Query() usupaginationDTO: UsupaginationDTO ) {
+  //       console.log(usupaginationDTO)
+  //       return this.usuariosService.findAll(usupaginationDTO)
+  //   }
 
-  @Get(':nombreUsuario')
-  findOne(@Param('nombreUsuario') nombreUsuario: string) {
-    return this.usuariosService.findOne(nombreUsuario);
-  }
+  // @Get(':nombreUsuario')
+  // findOne(@Param('nombreUsuario') nombreUsuario: string) {
+  //   return this.usuariosService.findOne(nombreUsuario);
+  // }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUsuarioDto: UpdateUsuarioDto) {
-    return this.usuariosService.update(+id, updateUsuarioDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateUsuarioDto: UpdateUsuarioDto) {
+  //   return this.usuariosService.update(+id, updateUsuarioDto);
+  // }
 
-  @Delete(':nombreUsuario')
-  remove(@Param('nombreUsuario') nombreUsuario: string) {
-    return this.usuariosService.remove(nombreUsuario);
-  }
+  // @Delete(':nombreUsuario')
+  // remove(@Param('nombreUsuario') nombreUsuario: string) {
+  //   return this.usuariosService.remove(nombreUsuario);
+  // }
   
 }

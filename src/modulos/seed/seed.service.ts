@@ -29,7 +29,7 @@ export class SeedService {
   
   public async cargaMasiva(){
 
-    this.usuarioService.deleteAllUsuarios();
+    // this.usuarioService.deleteAllUsuarios();
     this.procService.deleteAllProcs();
     this.clienteService.deleteAllClientes()
     this.categoriasService.deleteAllCat();
@@ -38,7 +38,7 @@ export class SeedService {
     await this.insertNewProvs();
     await this.insertNewClientes();
     await this.insertNewProcs();
-    await this.insertNewUsuarios();
+    //await this.insertNewUsuarios();
     
 
   }
@@ -53,15 +53,15 @@ export class SeedService {
     return true;
   }
 
-  private async insertNewUsuarios(){
-    await this.usuarioService.deleteAllUsuarios();
-    const insertPromisesUsuarios = [];
-    seedUsuarios.forEach( (usuario: CreateUsuarioDto) => {
-    insertPromisesUsuarios.push(this.usuarioService.create(usuario));
-    })
-    const results = await Promise.all(insertPromisesUsuarios);
-    return true;
-  }
+  // private async insertNewUsuarios(){
+  //   await this.usuarioService.deleteAllUsuarios();
+  //   const insertPromisesUsuarios = [];
+  //   seedUsuarios.forEach( (usuario: CreateUsuarioDto) => {
+  //   insertPromisesUsuarios.push(this.usuarioService.create(usuario));
+  //   })
+  //   const results = await Promise.all(insertPromisesUsuarios);
+  //   return true;
+  // }
 
   private async insertNewCats(){
     await this.categoriasService.deleteAllCat()

@@ -9,6 +9,8 @@ import { SeedModule } from './modulos/seed/seed.module';
 import { ProductosModule } from './modulos/productos/productos.module';
 import { CategoriasModule } from './modulos/categorias/categorias.module';
 import { ProveedorModule } from './modulos/proveedor/proveedor.module';
+import { AuthModule } from './modulos/auth/auth.module';
+
 
 @Module({
   imports: [
@@ -28,7 +30,8 @@ import { ProveedorModule } from './modulos/proveedor/proveedor.module';
     UsuariosModule,
     ProductosModule,
     CategoriasModule,
-    ProveedorModule
+    ProveedorModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],

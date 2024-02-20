@@ -1,24 +1,13 @@
 import { IsNumber, IsString, Matches, MinLength } from "class-validator";
 
 
-export class CreateUsuarioDto {
+export class LoginAuthDto {
 
     @IsString()
     email: string;
 
     @IsString()
-    username: string;
-
-    @IsString()
     password: string;
-
-    @IsString()
-    rol: string;
-
-    @IsString()
-    instagram: string;
-
-    //...
 
     
 }

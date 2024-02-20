@@ -1,8 +1,9 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, ParseIntPipe, UseGuards } from '@nestjs/common';
 import { ProductosService } from './productos.service';
 import { CreateProductoDto } from './dto/create-producto.dto';
 import { UpdateProductoDto } from './dto/update-producto.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
 
 @ApiTags('productos')
@@ -11,6 +12,7 @@ export class ProductosController {
   constructor(private readonly productosService: ProductosService) {}
 
   @Post()
+  @UseGuards(AuthGuard('jwt'))
   newProd(@Body() createProductoDto: CreateProductoDto) {
     return this.productosService.newProd(createProductoDto);
   }

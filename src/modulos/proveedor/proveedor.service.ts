@@ -17,11 +17,7 @@ export class ProveedorService {
   async showAllProvs() {
     try {
       const provdata = await this.proveedorRepository.find()
-      return {
-        message: 'listado de todos proveedores',
-        data: provdata,
-        status: 200
-      }
+      return provdata
     } catch (error) {
       throw new InternalServerErrorException('fallo al listar todos los proveedores')
     }

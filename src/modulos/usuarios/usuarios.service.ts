@@ -20,101 +20,101 @@ export class UsuariosService {
   }
 
 
+//   async create(createUsuarioDto: CreateUsuarioDto) {
+//     try{
+//         const {cliente, ...campos } = createUsuarioDto;
+//         const usuario = this.usuarioRepository.create({...campos});
+//         const clienteobj = await this.clienteRepository.findOne(cliente);      
+//         //console.log(clienteobj);
+//         usuario.cliente = clienteobj; // dirección del objeto autor relacionado con libros
+//       await this.usuarioRepository.save(usuario);
+        
+//         return {
+//         msg: 'Usuario correctamente insertado',
+//         data: usuario,
+//         status:200
+//       }
+//     }catch(error){
+//       //console.log(error)
+//       throw new InternalServerErrorException('sysadmin...');
+//     }
+//   }
+
+  @Post()
   async create(createUsuarioDto: CreateUsuarioDto) {
     try{
-        const {cliente, ...campos } = createUsuarioDto;
-        const usuario = this.usuarioRepository.create({...campos});
-        const clienteobj = await this.clienteRepository.findOne(cliente);      
-        //console.log(clienteobj);
-        usuario.cliente = clienteobj; // dirección del objeto autor relacionado con libros
+      const usuario = this.usuarioRepository.create(createUsuarioDto);
       await this.usuarioRepository.save(usuario);
-        
-        return {
-        msg: 'Usuario correctamente insertado',
+      return {
+        msg: 'Registro Insertado',
         data: usuario,
         status:200
-      }
+      };
     }catch(error){
-      //console.log(error)
-      throw new InternalServerErrorException('sysadmin...');
+      throw new InternalServerErrorException('Póngase en contacto con el Sysadmin')
     }
   }
 
-  // @Post()
-  // async create(createUsuarioDto: CreateUsuarioDto) {
-  //   try{
-  //     const usuario = this.usuarioRepository.create(createUsuarioDto);
-  //     await this.usuarioRepository.save(usuario);
-  //     return {
-  //       msg: 'Registro Insertado',
-  //       data: usuario,
-  //       status:200
-  //     };
-  //   }catch(error){
-  //     throw new InternalServerErrorException('Póngase en contacto con el Sysadmin')
-  //   }
-  // }
+//   // async findAll() {
+//   //   try {
+//   //     const usuarios = await this.usuarioRepository.find()
+//   //     return {
+//   //       data: usuarios,
+//   //       message: 'Listado de los usuarios',
+//   //       status: 200
+//   //     }
+//   //   } catch (error) {
+//   //     throw new InternalServerErrorException("fallo al listar todas las categorias")
+//   //   }
+//   // }
 
-  // async findAll() {
-  //   try {
-  //     const usuarios = await this.usuarioRepository.find()
-  //     return {
-  //       data: usuarios,
-  //       message: 'Listado de los usuarios',
-  //       status: 200
-  //     }
-  //   } catch (error) {
-  //     throw new InternalServerErrorException("fallo al listar todas las categorias")
-  //   }
-  // }
-
-  async findAll(usupaginationDto: UsupaginationDTO) {
-    const { limit, offset } = usupaginationDto;
-    let usuario = await this.usuarioRepository.find()
-    return this.usuarioRepository.find({
-        take: limit,
-        skip: offset
-    });
-    // return {
-    //     data: libros,
-    //     msg: "listado de libros",
-    //     status: 200
-    // }
-}
+//   async findAll(usupaginationDto: UsupaginationDTO) {
+//     const { limit, offset } = usupaginationDto;
+//     let usuario = await this.usuarioRepository.find()
+//     return this.usuarioRepository.find({
+//         take: limit,
+//         skip: offset
+//     });
+//     // return {
+//     //     data: libros,
+//     //     msg: "listado de libros",
+//     //     status: 200
+//     // }
+// }
 
   
 
-  findOne(nombreUsuario: string) {
-    const cliente = this.usuarioRepository.findOne({
-      where:{
-        nombreUsuario
-      },
-      relations: {
-        cliente: true
-      }
-    });
-    return cliente;
-  }
+//   findOne(nombreUsuario: string) {
+//     const cliente = this.usuarioRepository.findOne({
+//       where:{
+//         nombreUsuario
+//       },
+//       relations: {
+//         cliente: true
+//       }
+//     });
+//     return cliente;
+//   }
 
-  update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
-    return `This action updates a #${id} usuario`;
-  }
+//   update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
+//     return `This action updates a #${id} usuario`;
+//   }
 
-  async remove(nombreUsuario: string) {
-    const cliente = await this.usuarioRepository.findOneBy({ nombreUsuario });
+  async remove(id: string) {
+    const cliente = await this.usuarioRepository.findOneBy({ id });
     await this.usuarioRepository.remove(cliente);
     return 'Usuario eliminado'
   }
 
-  async deleteAllUsuarios(){
-    const query = this.usuarioRepository.createQueryBuilder('usuario');
-    try{
-      return await query
-        .delete()
-        .where({})
-        .execute()
-    }catch(error){
-      throw new InternalServerErrorException('sysadmin...')
-    }
-  }
+//   async deleteAllUsuarios(){
+//     const query = this.usuarioRepository.createQueryBuilder('usuario');
+//     try{
+//       return await query
+//         .delete()
+//         .where({})
+//         .execute()
+//     }catch(error){
+//       throw new InternalServerErrorException('sysadmin...')
+//     }
+//   }
 }

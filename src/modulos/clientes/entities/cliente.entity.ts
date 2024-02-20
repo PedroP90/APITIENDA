@@ -47,10 +47,10 @@ export class Cliente {
     })
     codigo_postal: string;
 
-    @OneToMany(
-        () => Usuario,
-        (usuario) => usuario.cliente,
-        { eager: true }
-    )
-    usuarios?: Usuario[]
+    // @OneToMany(
+    //     () => Usuario,
+    //     (usuario) => usuario.cliente,
+    //     { eager: true }
+    // )
+    // usuarios?: Usuario[]
 }

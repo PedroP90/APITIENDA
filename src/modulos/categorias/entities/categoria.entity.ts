@@ -38,4 +38,7 @@ export class Categoria {
         { eager: true }
     )
     productos?: Producto[]
+
+
+
 }
