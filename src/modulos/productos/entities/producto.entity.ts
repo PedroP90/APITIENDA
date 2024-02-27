@@ -3,7 +3,7 @@ import { Proveedor } from "src/modulos/proveedor/entities/proveedor.entity";
 import { BeforeInsert, Column, Entity, ManyToMany, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
 
 @Entity()
-export class Producto {
+export class Productos {
 
     @PrimaryColumn('text')
     id_producto: string
@@ -55,6 +55,12 @@ export class Producto {
         nullable:true
     })
     color:string
+
+    @Column('text',{
+        unique:false,
+        nullable:true
+    })
+    img:string
 
     @BeforeInsert()
     updateNombre(){

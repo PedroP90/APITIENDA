@@ -30,10 +30,7 @@ export class SeedService {
   public async cargaMasiva(){
 
     // this.usuarioService.deleteAllUsuarios();
-    this.procService.deleteAllProcs();
-    this.clienteService.deleteAllClientes()
-    this.categoriasService.deleteAllCat();
-    this.proveService.deleteAllProv();
+    
     await this.insertNewCats();
     await this.insertNewProvs();
     await this.insertNewClientes();
@@ -47,7 +44,7 @@ export class SeedService {
     await this.clienteService.deleteAllClientes();
     const insertPromisesClientes = [];
     seedClientes.forEach( (cliente: CreateClienteDto) => {
-    insertPromisesClientes.push(this.clienteService.create(cliente));
+      insertPromisesClientes.push(this.clienteService.create(cliente));
     })
     const results = await Promise.all(insertPromisesClientes);
     return true;

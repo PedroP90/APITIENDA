@@ -1,7 +1,7 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { CreateProductoDto } from './dto/create-producto.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Producto } from './entities/producto.entity';
+import { Productos } from './entities/producto.entity';
 import { Repository } from 'typeorm';
 import { CategoriasService } from '../categorias/categorias.service';
 import { UpdateProductoDto } from './dto/update-producto.dto';
@@ -11,8 +11,8 @@ import { ProveedorService } from '../proveedor/proveedor.service';
 export class ProductosService {
 
   constructor(
-    @InjectRepository(Producto)
-    private readonly productoRepository: Repository<Producto>,
+    @InjectRepository(Productos)
+    private readonly productoRepository: Repository<Productos>,
     private readonly categoriaService: CategoriasService,
     private readonly proveedorService: ProveedorService
   ) { }
@@ -20,12 +20,13 @@ export class ProductosService {
   // listar todos los productos
   async showAllProds() {
     try {
-      const producto = await this.productoRepository.find()
-      return {
-        message: 'listado de productos',
-        data: producto,
-        status: 200
-      }
+      const producto = await this.productoRepository.find({
+        relations: {
+          categoria: true,
+          proveedor: true
+        }
+      })
+      return producto
     } catch (error) {
       throw new InternalServerErrorException("fallo al listar todos los productos")
     }
@@ -42,11 +43,7 @@ export class ProductosService {
         proveedor: true
       }
     })
-    return{
-      message: 'detalle de producto',
-      data: producto,
-      status: 200
-    }
+    return producto
   }
 
   async newProd(createProductoDto: CreateProductoDto) {
@@ -60,11 +57,7 @@ export class ProductosService {
         producto.proveedor = proveedorobj
         await this.productoRepository.save(producto);
         
-        return {
-        msg: 'Producto correctamente insertado',
-        data: producto,
-        status:200
-      }
+        return producto
     }catch(error){
       console.log(error)
       throw new InternalServerErrorException('sysadmin...');

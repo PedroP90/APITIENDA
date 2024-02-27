@@ -37,6 +37,10 @@ export class CreateProductoDto {
     color:string
 
     @IsString()
+    @MinLength(3)
+    img:string
+
+    @IsString()
     categoria:string
 
     @IsString()

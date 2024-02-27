@@ -16,11 +16,7 @@ export class CategoriasService {
   async showAllCats() {
     try {
       const catData = await this.categoriaRepository.find()
-      return {
-        message: 'listado de todas las categorias',
-        data: catData,
-        status: 200
-      }
+      return catData
     } catch (error) {
       throw new InternalServerErrorException("fallo al listar todas las categorias")
     }

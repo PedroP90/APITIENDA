@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ProductosService } from './productos.service';
 import { ProductosController } from './productos.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Producto } from './entities/producto.entity';
+import { Productos } from './entities/producto.entity';
 import { CategoriasModule } from '../categorias/categorias.module';
 import { ProveedorModule } from '../proveedor/proveedor.module';
 
@@ -10,7 +10,7 @@ import { ProveedorModule } from '../proveedor/proveedor.module';
   controllers: [ProductosController],
   providers: [ProductosService],
   imports:[
-    TypeOrmModule.forFeature([Producto]),
+    TypeOrmModule.forFeature([Productos]),
     CategoriasModule,
     ProveedorModule
   ],

@@ -1,4 +1,4 @@
-import { Producto } from "src/modulos/productos/entities/producto.entity";
+import { Productos } from "src/modulos/productos/entities/producto.entity";
 import { Entity, PrimaryColumn,Column, BeforeInsert, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
@@ -53,11 +53,11 @@ export class Proveedor {
     }
 
     @OneToMany(
-        ()=> Producto,
+        ()=> Productos,
         (producto)=> producto.proveedor,
         { eager: true }
     )
-    productos?: Producto[]
+    productos?: Productos[]
     
 }
 
