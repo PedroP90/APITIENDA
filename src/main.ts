@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   //--prefijo de acceso a la api en url ---
   app.setGlobalPrefix('tienda');
-  
+  // app.enableCors(); //evitar el CORS en el s.web. Habilita peticiones del exterior
   //--configuración mecanismo de validación ---- yarn add --save class-validator class-transformer 
   app.useGlobalPipes(
     new ValidationPipe({
