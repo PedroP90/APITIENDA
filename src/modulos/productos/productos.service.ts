@@ -34,7 +34,7 @@ export class ProductosService {
 
   // detalle de producto
   async detalle1prov(id_producto:string){
-    const producto= await this.productoRepository.find({
+    const producto= await this.productoRepository.findOne({
       where:{
         id_producto
       },
