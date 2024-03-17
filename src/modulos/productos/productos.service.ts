@@ -96,7 +96,7 @@ export class ProductosService {
   }
 
   // actualizar producto
-  // async updateProv(id_producto:number,updateProductoDto:UpdateProductoDto){
+  // async updateProv(id_producto:string,updateProductoDto:UpdateProductoDto){
   //    const producto = await this.productoRepository.findOne({
   //     where: { id_producto }
   //   })
@@ -109,7 +109,24 @@ export class ProductosService {
   //   }
   // }
 
-  update(id_producto:number, updateProductoDto: UpdateProductoDto) {
+  // async update(id_producto: string, updateProductoDto: UpdateProductoDto) {
+  //   try {
+  //     const producto = await this.productoRepository.findOne({
+  //       where: { id_producto }
+  //     })
+  //     this.productoRepository.merge(producto, updateProductoDto);
+  //     await this.productoRepository.save(producto);
+  //     return {
+  //       message: `Categoría con ID ${id_producto} actualizada correctamente`,
+  //       data: producto,
+  //       status: 200,
+  //     };
+  //   } catch (error) {
+  //     throw new InternalServerErrorException('Error al actualizar la categoría.');
+  //   }
+  // }
+
+  update(id_producto:string, updateProductoDto: UpdateProductoDto) {
     return `This action updates a #${+id_producto} usuario`;
   }
 

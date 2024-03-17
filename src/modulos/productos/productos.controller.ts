@@ -28,7 +28,7 @@ export class ProductosController {
   }
 
   @Patch(':id_producto')
-  update(@Param('id_producto',ParseIntPipe) id_producto: number, @Body() updateProductoDto: UpdateProductoDto) {
+  update(@Param('id_producto',ParseIntPipe) id_producto: string, @Body() updateProductoDto: UpdateProductoDto) {
     return this.productosService.update(id_producto, updateProductoDto);
   }
 
