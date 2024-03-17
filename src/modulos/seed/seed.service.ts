@@ -31,6 +31,7 @@ export class SeedService {
 
     // this.usuarioService.deleteAllUsuarios();
     
+    
     await this.insertNewCats();
     await this.insertNewProvs();
     await this.insertNewClientes();

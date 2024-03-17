@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsOptional, IsString, Matches } from "class-validator";
+import { IsEmail, IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from "class-validator";
 
 
 export class RegisterAuthDto {
@@ -23,6 +23,8 @@ export class RegisterAuthDto {
     @IsNotEmpty({
         message: 'password is required'
     })
+    @MinLength(6)
+    @MaxLength(50)
     @Matches(
         /(?:(?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, {
         message: 'La contraseña debe tener mayúsculas, minúsculas y números'

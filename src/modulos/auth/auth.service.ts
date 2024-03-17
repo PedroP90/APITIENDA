@@ -39,7 +39,7 @@ export class AuthService {
       return {
         msg: 'Usuario validado',
         status: 200,
-        data: usuario,
+        user: usuario,
         token: this.getAccessToken(usuario)
       }
       //return this.getAccessToken(usuario);

@@ -8,6 +8,10 @@ export class CreateCategoriaDto {
     @IsString()
     @MinLength(5)
     nombre:string;
+
+    @IsString()
+    @MinLength(3)
+    img:string
     
     @IsString()
     @MinLength(5)

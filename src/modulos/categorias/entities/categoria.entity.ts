@@ -4,7 +4,9 @@ import { PrimaryColumn, Column, Entity, OneToMany, BeforeInsert } from "typeorm"
 @Entity()
 export class Categoria {
 
-    @PrimaryColumn('text')
+    @PrimaryColumn('text',{
+        nullable: false,
+    })
     id_categoria: string
 
     @Column('text',{
@@ -12,6 +14,12 @@ export class Categoria {
         unique:true
     })
     nombre:string
+
+    @Column('text',{
+        unique:false,
+        nullable:true
+    })
+    img:string
 
     @Column('text',{
         nullable:true,
@@ -25,12 +33,6 @@ export class Categoria {
             this.nombre = this.nombre.charAt(0).toUpperCase() + this.nombre.slice(1);
         }
     }
-
-    // @Column('text',{
-    //     unique:false,
-    //     nullable:false
-    // })
-    // productos:string;
 
     @OneToMany(
         ()=> Productos,

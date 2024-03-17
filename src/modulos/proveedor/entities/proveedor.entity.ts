@@ -5,7 +5,9 @@ import { Entity, PrimaryColumn,Column, BeforeInsert, OneToMany, PrimaryGenerated
 export class Proveedor {
 
 
-    @PrimaryColumn('text')
+    @PrimaryColumn('text',{
+        nullable: false,
+    })
     cif:string
 
     @Column('text',{

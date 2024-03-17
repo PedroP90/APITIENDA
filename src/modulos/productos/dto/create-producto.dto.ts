@@ -1,4 +1,5 @@
 import { IsNumber, IsOptional, IsString, MinLength } from "class-validator";
+import { IsNull } from "typeorm";
 
 
 export class CreateProductoDto {
@@ -41,8 +42,10 @@ export class CreateProductoDto {
     img:string
 
     @IsString()
+    @IsOptional()
     categoria:string
 
+    @IsOptional()
     @IsString()
     proveedor:string
 }

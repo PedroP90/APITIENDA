@@ -74,12 +74,12 @@ export class Productos {
         (proveedor) => proveedor.productos,
         {cascade: true}
     )
-    proveedor?:Proveedor
+    proveedor:Proveedor
 
     @ManyToOne(
         () => Categoria,
         (idcat) => idcat.productos,
         {cascade: true}
     )
-    categoria?:Categoria
+    categoria:Categoria
 }

@@ -1,4 +1,4 @@
-import { IsNumber, IsString, Matches, MinLength } from "class-validator";
+import { IsNumber, IsOptional, IsString, Matches, MinLength } from "class-validator";
 
 
 export class CreateUsuarioDto {
@@ -13,9 +13,11 @@ export class CreateUsuarioDto {
     password: string;
 
     @IsString()
+    @IsOptional()
     rol: string;
 
     @IsString()
+    @IsOptional()
     instagram: string;
 
     //...

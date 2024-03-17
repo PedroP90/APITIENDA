@@ -11,62 +11,61 @@ import { UsupaginationDTO } from './dto/usupagination.dto';
 @Injectable()
 export class UsuariosService {
 
-  constructor(
-    @InjectRepository(Usuario)
-    private readonly usuarioRepository: Repository<Usuario>,
-    private readonly clienteRepository: ClientesService
-  ){
+  // constructor(
+  //   @InjectRepository(Usuario)
+  //   private readonly usuarioRepository: Repository<Usuario>,
+  //   private readonly clienteRepository: ClientesService
+  // ){
 
-  }
+  // }
 
 
-//   async create(createUsuarioDto: CreateUsuarioDto) {
-//     try{
-//         const {cliente, ...campos } = createUsuarioDto;
-//         const usuario = this.usuarioRepository.create({...campos});
-//         const clienteobj = await this.clienteRepository.findOne(cliente);      
-//         //console.log(clienteobj);
-//         usuario.cliente = clienteobj; // dirección del objeto autor relacionado con libros
-//       await this.usuarioRepository.save(usuario);
+  // async create(createUsuarioDto: CreateUsuarioDto) {
+  //   try{
+  //       const {cliente, ...campos } = createUsuarioDto;
+  //       const usuario = this.usuarioRepository.create({...campos});
+  //       const clienteobj = await this.clienteRepository.findOne(cliente);      
+  //       //console.log(clienteobj);
+  //       usuario.cliente = clienteobj; // dirección del objeto autor relacionado con libros
+  //     await this.usuarioRepository.save(usuario);
         
-//         return {
-//         msg: 'Usuario correctamente insertado',
-//         data: usuario,
-//         status:200
-//       }
-//     }catch(error){
-//       //console.log(error)
-//       throw new InternalServerErrorException('sysadmin...');
-//     }
-//   }
+  //       return {
+  //       msg: 'Usuario correctamente insertado',
+  //       data: usuario,
+  //       status:200
+  //     }
+  //   }catch(error){
+  //     //console.log(error)
+  //     throw new InternalServerErrorException('sysadmin...');
+  //   }
+  // }
 
-  @Post()
-  async create(createUsuarioDto: CreateUsuarioDto) {
-    try{
-      const usuario = this.usuarioRepository.create(createUsuarioDto);
-      await this.usuarioRepository.save(usuario);
-      return {
-        msg: 'Registro Insertado',
-        data: usuario,
-        status:200
-      };
-    }catch(error){
-      throw new InternalServerErrorException('Póngase en contacto con el Sysadmin')
-    }
-  }
+  // async create(createUsuarioDto: CreateUsuarioDto) {
+  //   try{
+  //     const usuario = this.usuarioRepository.create(createUsuarioDto);
+  //     await this.usuarioRepository.save(usuario);
+  //     return {
+  //       msg: 'Registro Insertado',
+  //       data: usuario,
+  //       status:200
+  //     };
+  //   }catch(error){
+  //     throw new InternalServerErrorException('Póngase en contacto con el Sysadmin')
+  //   }
+  // }
 
-//   // async findAll() {
-//   //   try {
-//   //     const usuarios = await this.usuarioRepository.find()
-//   //     return {
-//   //       data: usuarios,
-//   //       message: 'Listado de los usuarios',
-//   //       status: 200
-//   //     }
-//   //   } catch (error) {
-//   //     throw new InternalServerErrorException("fallo al listar todas las categorias")
-//   //   }
-//   // }
+  // async findAll() {
+  //   try {
+  //     const usuarios = await this.usuarioRepository.find()
+  //     return {
+  //       data: usuarios,
+  //       message: 'Listado de los usuarios',
+  //       status: 200
+  //     }
+  //   } catch (error) {
+  //     throw new InternalServerErrorException("fallo al listar todas las categorias")
+  //   }
+  // }
 
 //   async findAll(usupaginationDto: UsupaginationDTO) {
 //     const { limit, offset } = usupaginationDto;
@@ -84,27 +83,27 @@ export class UsuariosService {
 
   
 
-//   findOne(nombreUsuario: string) {
-//     const cliente = this.usuarioRepository.findOne({
-//       where:{
-//         nombreUsuario
-//       },
-//       relations: {
-//         cliente: true
-//       }
-//     });
-//     return cliente;
-//   }
+  // findOne(nombreUsuario: string) {
+  //   const cliente = this.usuarioRepository.findOne({
+  //     where:{
+  //       nombreUsuario
+  //     },
+  //     relations: {
+  //       cliente: true
+  //     }
+  //   });
+  //   return cliente;
+  // }
 
-//   update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
-//     return `This action updates a #${id} usuario`;
-//   }
+  // update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
+  //   return `This action updates a #${id} usuario`;
+  // }
 
-  async remove(id: string) {
-    const cliente = await this.usuarioRepository.findOneBy({ id });
-    await this.usuarioRepository.remove(cliente);
-    return 'Usuario eliminado'
-  }
+  // async remove(id: string) {
+  //   const cliente = await this.usuarioRepository.findOneBy({ id });
+  //   await this.usuarioRepository.remove(cliente);
+  //   return 'Usuario eliminado'
+  // }
 
 //   async deleteAllUsuarios(){
 //     const query = this.usuarioRepository.createQueryBuilder('usuario');
@@ -117,4 +116,25 @@ export class UsuariosService {
 //       throw new InternalServerErrorException('sysadmin...')
 //     }
 //   }
+
+  create(createUserDto: CreateUsuarioDto) {
+    return 'This action adds a new user';
+  }
+
+  findAll() {
+    return `This action returns all user`;
+  }
+
+  findOne(id: number) {
+    return `This action returns a #${id} user`;
+  }
+
+  update(id: number, updateUserDto: UpdateUsuarioDto) {
+    return `This action updates a #${id} user`;
+  }
+
+  remove(id: number) {
+    return `This action removes a #${id} user`;
+  }
+
 }

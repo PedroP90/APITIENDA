@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   //--prefijo de acceso a la api en url ---
   app.setGlobalPrefix('tienda');
-  // app.enableCors(); //evitar el CORS en el s.web. Habilita peticiones del exterior
+  app.enableCors(); //evitar el CORS en el s.web. Habilita peticiones del exterior
   //--configuración mecanismo de validación ---- yarn add --save class-validator class-transformer 
   app.useGlobalPipes(
     new ValidationPipe({
@@ -20,12 +20,12 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Métodos de la api tienda')
-    .setDescription('The cats API description')
-    .setVersion('1.0')
+    .setDescription('API de Pedro')
+    .setVersion('2.0')
     .addTag('Tienda')
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('tienda', app, document);
+  SwaggerModule.setup('docs', app, document);
 
   
   //---puerto de escucha del servidor

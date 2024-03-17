@@ -39,14 +39,14 @@ export class Usuario {
     @Column('bool', {
         default: true
     })
-    isActive: boolean;
+    isActive?: boolean;
 
     @Column('text', {
         array: true,
         //dto -> ['invitado', 'usuario', 'gestor', 'administrador']
         default: ['usuario']
     })
-    roles: string[];
+    roles?: string[];
 
     @Column('varchar', {
         name: 'logo',
@@ -54,7 +54,7 @@ export class Usuario {
         unique: false,
         length: 150
     })
-    logo: string; // ruta relativa a "public/images"
+    logo?: string; // ruta relativa a "public/images"
 
     // rrss
     @Column('varchar', {
@@ -63,17 +63,17 @@ export class Usuario {
         unique: false,
         length: 150
     })
-    instagram: string;
+    instagram?: string;
 
     @CreateDateColumn({
         name: 'create_at'
     })
-    createdAt: Date;
+    createdAt?: Date;
 
     @UpdateDateColumn({
         name: 'update_at'
     })
-    updateAt: Date;
+    updateAt?: Date;
 
     //relación de 1 a 1 de Auth(User) <---> Cliente
 }

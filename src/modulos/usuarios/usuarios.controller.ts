@@ -37,5 +37,29 @@ export class UsuariosController {
   // remove(@Param('nombreUsuario') nombreUsuario: string) {
   //   return this.usuariosService.remove(nombreUsuario);
   // }
+  @Post()
+  create(@Body() createUserDto: CreateUsuarioDto) {
+    return this.usuariosService.create(createUserDto);
+  }
+
+  @Get()
+  findAll() {
+    return this.usuariosService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.usuariosService.findOne(+id);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateUserDto: UpdateUsuarioDto) {
+    return this.usuariosService.update(+id, updateUserDto);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.usuariosService.remove(+id);
+  }
   
 }

@@ -12,7 +12,7 @@ export class ProductosController {
   constructor(private readonly productosService: ProductosService) {}
 
   @Post()
-  @UseGuards(AuthGuard('jwt'))
+  //@UseGuards(AuthGuard('jwt'))
   newProd(@Body() createProductoDto: CreateProductoDto) {
     return this.productosService.newProd(createProductoDto);
   }

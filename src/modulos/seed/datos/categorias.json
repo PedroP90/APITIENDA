@@ -2,41 +2,49 @@
   {
     "id_categoria": "1",
     "nombre": "Ordenadores de Sobremesa",
+    "img": "/computer.png",
     "descripcion": "¿Buscas un equipo de trabajo fijo? En esta categoría encontrarás Ordenadores de sobremesa para tu hogar o para tu lugar de trabajo."
   },
   {
     "id_categoria": "2",
     "nombre": "Portátiles",
+    "img": "/laptops.png",
     "descripcion": "Encuentra tu ordenador para llevar a cualquier lugar."
   },
   {
     "id_categoria": "3",
     "nombre": "Placas Base",
+    "img": "/placas.png",
     "descripcion": "Aumenta el rendimiento y la potencia de tus PCs con placas base de alta calidad."
   },
   {
     "id_categoria": "4",
     "nombre": "Procesadores",
+    "img": "/cpu.webp",
     "descripcion": "Elige entre los mejores procesadores del mercado."
   },
   {
     "id_categoria": "5",
     "nombre": "Disipadores",
+    "img": "/cooler.webp",
     "descripcion": "Disipadores de calor, tanto por aire como líquidos para mantener a tu PC en pleno funcionamiento."
   },
   {
     "id_categoria": "6",
     "nombre": "Memorias RAM",
+    "img": "/ram.png",
     "descripcion": "A mayor cantidad, mayor cantidad de programas abiertos. ¡Compra sin miedo!"
   },
   {
     "id_categoria": "7",
     "nombre": "Almacenamiento",
+    "img": "/sata.png",
     "descripcion": "¡No pierdas tus archivos! Compra un disco duro SSD para una carga de datos más veloz."
   },
   {
     "id_categoria": "8",
     "nombre": "Fuentes de alimentación",
+    "img": "/fuente.png",
     "descripcion": "La fuente adecuada es fundamental en un sistema completo."
   }
   
